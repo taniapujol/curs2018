@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 13</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            font-size: 3em;
+        }
+        table, th {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fusión de columnas</h1>
+    <table>
+        <tr>
+            <th colspan="2">A</th>
+        </tr>
+        <tr>
+            <th>B</th>
+            <th>C</th>
+        </tr>
+    </table>
+    <h1>Fusión de filas</h1>
+    <table>
+        <tr>
+            <th>A</th>
+            <th rowspan="2">B</th>
+        </tr>
+        <tr >
+            <th >C</th>
+        </tr>
+    </table>
+    <h1>Fusión de columnas</h1>
+    <table>
+        <tr>
+            <th colspan="3">A</th>
+            <th>B</th>
+        </tr>
+        <tr >
+            <th >C</th>
+            <th colspan="2">D</th>
+            <th>E</th>
+        </tr>
+        <tr>
+            <th colspan="4">F</th>
+        </tr>
+        <tr>
+            <th>G</th>
+            <th>H</th>
+            <th>I</th>
+            <th>J</th>
+        </tr>
+    </table>
+    <h1>Fusión de filas</h1>
+    <table>
+        <tr>
+            <th>A</th>
+            <th>B</th>
+            <th rowspan="3">C</th>
+            <th>D</th>
+        </tr>
+        <tr>
+            <th rowspan="2">E</th>
+            <th>F</th>
+            <th rowspan="3">G</th>
+        </tr>
+        <tr>
+            <th>H</th>
+        </tr>
+        <tr>
+            <th>I</th>
+            <th>J</th>
+            <th>K</th>
+        </tr>
+    </table>
+</body>
+</html>

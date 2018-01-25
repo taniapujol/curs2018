@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercici 18</title>
+</head>
+<body>
+    <h1>Rellena tu CV</h1>
+    <form action="php/insertar_cv.php" method="post">
+        <label for="nombre">Nombre</label> <br>
+        <input type="text" name="nombre" id="nombre" size="30"> <br>
+        <label for="apellidos">apellidos</label> <br>
+        <input type="text" name="apellidos" id="apellidos" size="80"><br>
+        <label for="contraseña">Contraseña</label><br>
+        <input type="password" id="contraseña" name="contraseña" size="10"><br>
+        <label for="dni">DNI</label><br>
+        <input type="text" id="dni" name="dni" maxlength="9" pattern="[1-9]{8}[A-Za-z]{1}"><br>
+        <label for="sexo">Sexo</label><br>
+        <input type="radio" name="sexo" id="sexo" value="Hombre" checked>Hombre <br>
+        <input type="radio" name="sexo" id="sexo" value="Mujer">Mujer <br><br><br>
+        <label for="foto">Incluir mi foto</label>
+        <input type="file" name="foto" id="foto" >
+        <input type="button" value="Elegir..."><br><br>
+        <input type="checkbox" id="boletin" name="boletin" id="boletin" checked>
+        <label for="boletin">Suscribirme al boletin de novedades</label><br><br>
+        <input type="submit" value="Guardar cambios">
+        <input type="reset" value="Borrar los datos introducidos">
+    </form>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Diseño de columnas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+            justify-content: center;
+            font-size: 1em;           
+        }
+        h1 {
+            margin: 5px;
+        }
+        div {
+            width: 90%;
+            margin: auto;
+        }
+        #cabezera, #cabezera2 {
+            width: 100%;
+            height: 50px;
+            background-color: blue;
+        }
+        #menu {
+            width: 25%;
+            height: 200px;
+            float: left;
+            background-color: dimgray;
+        }
+        #contenido {
+            width: 75%;
+            height: 200px;
+            float: right;
+            background-color: chocolate;
+        }
+        #pie, #pie2 {
+            width: 100%;
+            height: 50px;
+            background-color: blue;
+            clear: left;
+        }
+        #menu2, #contenido2, #lateral {
+            height: 200px;
+            display: inline-block;
+        }
+        #menu2 { 
+            background-color: dimgray;
+            width: 25%;  
+            float: left;  
+        }
+        #contenido2 { 
+            background-color: chocolate;
+            width: 50%;    
+        }
+        #lateral { 
+            background-color: aquamarine;
+            width: 25%;
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>DISEÑO DE 2 COLUMNAS</h1>
+        <div id="cabezera">
+             <p>CABEZERA</p>
+        </div>
+         <div id="menu">
+            <p>MENU</p>
+        </div>
+        <div id="contenido">
+            <p>CONTENIDO</p>
+         </div>
+        <div id="pie">
+           <p>PIE</p>
+        </div>  
+    </div>
+    <div style="margin-top:2em;">
+        <h1>DISEÑO DE 3 COLUMNAS</h1>
+        <div id="cabezera2">
+            <p>CABEZERA</p>
+        </div>
+            <div id="menu2">
+            <p>MENU</p>
+        </div>
+        <div id="contenido2">
+            <p>CONTENIDO</p>
+        </div>
+        <div id="lateral">
+            <p>lateral</p>
+        </div>
+        <div id="pie2">
+            <p>PIE</p>
+        </div>  
+    </div>
+</body>
+</html>

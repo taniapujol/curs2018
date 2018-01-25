@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: pink;
+    margin: 10px;
+}
+#marcas {
+    display: inline;
+    background-color: yellow;
+    border: 2px solid blue;
+}

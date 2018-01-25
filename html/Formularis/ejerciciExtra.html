@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercici Extra de formularis</title>
+    <style>
+        h1 { text-align: center}
+        form {width: 80%; padding: 10px; margin: auto;}
+        #col1, #col2 { width: 50%;}
+        #col1{float: left;}
+        #col2{float: right;}
+        #botons{
+            margin-top: 100px;
+            margin-left: 50px;
+             }
+    </style>
+</head>
+<body>
+    <h1>Fes-te soci de IKEA!</h1>
+    <form action="php/document.php" method="post">
+        <div id="col1">
+            <div id="dades">
+                <fieldset>
+                <label for="nom">Nom:</label> 
+                <input type="text" name="nom" id="nom" size="10"><br>
+                <label for="cognom">Cognom:</label>
+                <input type="text" name="cognom" id="cognom"><br><br>
+                <label for="direccio">Direcció:</label><br>
+                <textarea name="direccio" id="direccio" cols="30" rows="10" placeholder="
+                carrer
+                Pis, Porta,
+                CP
+                Ciutat"></textarea><br>
+                </fieldset>
+                <fieldset>
+                    <label for="usuari">Usuari:</label>
+                    <input type="text" name="usuari" id="usuari">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password"><br>
+                </fieldset>
+            </div>
+            <div id="vens">
+                <fieldset>
+                    <legend>Cada quan vens a IKEA?</legend>
+                    <input type="radio" name="vens" id="vens" value="un cop a la setmana">
+                    <label for="vens">Un cop a la setmana</label><br>
+                    <input type="radio" name="vens" id="vens" value="un cop al mes">
+                    <label for="vens">Un cop al mes</label><br>
+                    <input type="radio" name="vens" id="vens" value="un cop cada 6 mesos">
+                    <label for="vens">Un cop cada 6 mesos</label><br>
+                    <input type="radio" name="vens" id="vens" value="un cop l'any">
+                    <label for="vens">Un cop l'any</label><br>
+                    <input type="radio" name="vens" id="vens" value="un cop d'un cop l'any">
+                    <label for="vens">Un cop d'un cop l'any</label><br>
+                </fieldset>
+            </div>
+        </div>
+        <div id="col2">
+            <div id="producte">
+                <label for="producte">Per quins productes estàs interessat? (marca 2 opcions mínim)</label><br>
+                <select name="producte" id="producte" multiple="multiple">
+                    <option value="cuines">Cuines</option>
+                    <option value="menjadors">Menjadors</option>
+                    <option value="banys">Banys</option>
+                    <option value="patis">Patis</option>
+                    <option value="dormitoris">Dormitoris</option>
+                    <option value="jardins">Jardins</option>
+                </select>
+            </div>
+            <div id="boletin">
+                <fieldset>
+                    <legend>Vull rebre notificacions via:</legend>
+                    <input type="checkbox" name="email" id="email" checked value="Email">
+                    <label for="email">Email</label><br>
+                    <input type="checkbox" name="postalEmail" id="postalEmail" value="Postal Email">
+                </fieldset>
+            </div>
+            <div id="botons">
+                <input type="submit" value="Enviar consulta" style="font-size:1.5em">
+                <input type="reset" value="Restablecer" style="font-size:1.5em">
+            </div>
+        </div>
+    </form>
+</body>
+</html>

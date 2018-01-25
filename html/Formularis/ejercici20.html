@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercici 20</title>
+</head>
+<body>
+    <form action="php/insertar_cv.php" method="port">
+        <h1>Rellena tu CV</h1>
+        <fieldset>
+            <legend>Datos personales</legend>
+            <label for="provincia">Provincia</label><br>
+            <select name="provincia" id="provincia">
+                <option value="Barcelona">Barcelona</option>
+                <option value="Lleida">LLeida</option>
+                <option value="Girona">Girona</option>
+                <option value="Tarragona">Tarragona</option>
+            </select><br><br>
+            <label for="data">Fecha de nacimiento</label><br>
+            <input type="text" name="dia" id="data-dia" size="2">
+            <span> de </span> 
+            <select name="meses" id="meses">
+                <option value="Enero">Enero</option>
+                <option value="Febrero">Febrero</option>
+                <option value="Marzo">Marzo</option>
+                <option value="Abril">Abril</option>
+                <option value="Mayo">Mayo</option>
+                <option value="Junio">Junio</option>
+                <option value="Julio">Julio</option>
+                <option value="Agosto">Agosto</option>
+                <option value="Septiembre">Septiembre</option>
+                <option value="Noviembre">Noviembre</option>
+                <option value="Octubre">Octubre</option>
+                <option value="Diciembre">Diciembre</option>
+            </select>
+            <span> de </span>
+            <input type="text" name="año" id="data-año" size="4"><br><br>
+            <label for="temas">Temas de interés</label><br>
+            <textarea name="temas" id="temas" cols="30" rows="10" placeholder="Administración de bases de datos Análisis y programación Arquitectura Calidad ERP,CRM, Business inteligence"></textarea>
+        </fieldset>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

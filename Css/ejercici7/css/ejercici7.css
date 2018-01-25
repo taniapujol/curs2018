@@ -1,0 +1,80 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}
+/* css pel menu vertical*/
+    #menu_vertical ul {
+        list-style-type: none;
+        margin: 10px;
+        width: 15%;
+    }
+    #menu_vertical li { 
+        border: 2px solid black;
+        padding: 20px;
+        background-color: gray;
+        color: white;
+    }
+    #menu_vertical a {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+    }
+    #menu_vertical li:hover { 
+        background-color: rosybrown;
+        cursor: pointer;
+    }
+
+/* css pel menu horitzontal*/
+    #menu_horitzontal {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+    }
+    #menu_horitzontal ul {
+        list-style-type: none;
+        float: right;
+    }
+    #menu_horitzontal li {
+        display: inline;
+        border: 2px solid black;
+        background-color: gray;
+        padding: 20px;
+        color: white
+    }
+    #menu_horitzontal a {
+        text-decoration: none;
+        color: white;
+    }
+    #menu_horitzontal li:hover {
+        background-color: rosybrown;
+        cursor: pointer;
+    }
+/* css pel menu horitzontal amb pestayes*/
+    #menu_pestanyes {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+    }
+    #menu_pestanyes ul {
+        list-style-type: none;
+        float: right;
+    }
+    #menu_pestanyes li {
+        display: inline-block;
+        border: 2px solid black;
+        border-radius: 20px 20px 0 0;
+        background-color: gray;
+        padding: 20px;
+        color: white
+    }
+    #menu_pestanyes a {
+        text-decoration: none;
+        color: white;
+    }
+    #menu_pestanyes li:hover {
+        background-color: rosybrown;
+        cursor: pointer;
+    }
+
+   

@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1, p, table, div {margin: 5px;}
+#titulo  { color: green;}
+p strong  { color:red;}
+p span.destacado {color: orange;}
+h2#subtitulo{ color: blue;}
+p a {color:red;}
+p a em {color: blue;}
+p span.especial {color: purple;}
+#adicional{ color: rgb(161, 209, 28);}
+#especial {color: purple;}
+div#adicional p a {color: green;}
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 5px;
+} 
+table caption {color: blue;}
+table th { color: red;}
+table td strong {color: yellow;}
+table th.especial{ color: orange;}
+table td { color: green};

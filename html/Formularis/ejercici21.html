@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercici 21</title>
+</head>
+<body>
+    <h1>Información sobre el producto</h1>
+    <form action="php/insertar_cv.php" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Datos básicos</legend>
+            <label for="nombre">nombre</label><br>
+            <input type="text" name="nombre" id="nombre"><br><br>
+            <label for="descripcion">Descripcion</label><br>
+            <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea><br><br>
+            <label for="foto">Foto </label>
+            <input type="file" name="foto" id="foto">
+            <input type="button" value="Elegir..." id="foto"><br><br>
+            <input type="checkbox" name="añadir" id="añadir" value="off">
+            <label for="añadir">Añadir contador de visitas</label>
+        </fieldset>
+        <fieldset>
+            <legend>Datos económicos</legend>
+            <label for="precio">Precio</label>
+            <input type="text" name="precio" id="precio" size="4"><span> €</span>
+            <label for="impuestos" style="margin-left:20px">Impuestos</label>
+            <select name="impuestos" id="impuestos">
+                <option value="4%">4%</option>
+                <option value="7%">7%</option>
+                <option value="16%">16%</option>
+                <option value="25%">25%</option>
+            </select><br>
+            <label for="promocion">Promoción</label><br>
+            <input type="radio" name="promocion" id="promocion" value="ninguno" checked>Ninguno<br>
+            <input type="radio" name="promocion" id="promocion" value="Transporte gratuito">Transporte gratuito<br>
+            <input type="radio" name="promocion" id="promocion" value="descuento 5%">Descuento 5%<br>
+        </fieldset>
+        <br><br><br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar datos">
+    </form>
+</body>
+</html>
