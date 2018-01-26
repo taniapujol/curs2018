@@ -102,44 +102,40 @@
             background-color: rosybrown;
             cursor: pointer;
         }
-    /* submenu fijo */
-    #submenu_fijo {
-        list-style-type: none;
-        position: relative;
-        left: 255px;
-        top: -60px;
-    }
-    #submenu_fijo li { 
-        border: 2px solid black;
-        padding: 20px;
-        background-color: gray;
-        color: white;
-    }
-    #submenu_submenu a {
-        color: white;
-        text-decoration: none;
-        display: inline-block;
-    }
-    /* submenu hover */
-    #submenu_hover {
-        list-style-type: none;
-        display: none;
-    }
-    #submenu_hover li { 
-        border: 2px solid black;
-        padding: 20px;
-        background-color: gray;
-        color: white;
-    }
-    #submenu_hover a {
-        color: white;
-        text-decoration: none;
-        display: inline-block;
-    }
-    #submenu_hover:hover {
+        /* submenu fijo */
+        #submenu_fijo {
+            list-style-type: none;
+            position: relative;
+            left: 255px;
+            top: -60px;
+        }
+        #submenu_fijo li { 
+            border: 2px solid black;
+            padding: 20px;
+            background-color: gray;
+            color: white;
+        }
+        /* submenu hover */
+        #submenu_hover {
+            list-style-type: none;
+            display: none;
+        }
+        #submenu_hover li { 
+            border: 2px solid black;
+            padding: 20px;
+            background-color: gray;
+            color: white;
+            position: relative;
+            left: 255px;
+            top: -60px;
+        }
+        #submenu_hover a {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+        }
+    #submenu_hover:hover li {
         display: block;
-        position: relative;
-        left: 255px;
-        top: -60px;
+        
     }
    
