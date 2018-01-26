@@ -1,0 +1,25 @@
+body { width: 80%;}
+table#antes {
+    border: 1px solid black;
+    float: left;
+    margin-left: 5%;
+}
+table#antes td, table#antes th { border: 1px solid black;}
+table#despues {
+    border: 1px solid black;
+    border-collapse: collapse;
+    float: right;
+}
+table#despues td, table#despues th { 
+    border: 1px solid black;
+    padding: 5px;
+}
+table#despues th {
+    background-color: cyan;
+    text-align: left;
+}
+table#despues thead th { 
+    background-color: #ccc; 
+    text-align: center;
+}
+table#despues tr:nth-child(odd) { background-color: yellow;}

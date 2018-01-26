@@ -103,12 +103,7 @@
             cursor: pointer;
         }
         /* submenu fijo */
-        #submenu_fijo {
-            list-style-type: none;
-            position: relative;
-            left: 255px;
-            top: -60px;
-        }
+        #submenu_fijo { list-style-type: none; }
         #submenu_fijo li { 
             border: 2px solid black;
             padding: 20px;
@@ -125,16 +120,13 @@
             padding: 20px;
             background-color: gray;
             color: white;
-            position: relative;
-            left: 255px;
-            top: -60px;
         }
         #submenu_hover a {
             color: white;
             text-decoration: none;
             display: inline-block;
         }
-    #submenu_hover:hover li {
+    #menu_vertical_submenu li:hover #submenu_hover {
         display: block;
         
     }

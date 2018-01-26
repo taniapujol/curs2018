@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formularios CSS</title>
+</head>
+<body>
+    <form action="php/formulari.php" method="post">
+        <fieldset>
+            <legend>
+                Nombre y apellidos <span>*</span>
+            </legend>
+            <input type="text" name="nombre" id="nombre">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="PrimerApellido" id="PrimerApellido">
+            <label for="PrimerApellidos">Primer Apellido</label>
+            <input type="text" name="SegundoApellido" id="SegundoApellido">
+            <label for="SegundoApellido">Segundo Apellido</label>
+        </fieldset>
+        <fieldset disabled="disabled">
+            <legend>
+                Dirección <span>*</span>
+            </legend>
+            <input type="text" name="direccion" id="direccion">
+            <label for="direccion">Calle, número, piso,puerta</label>
+            <input type="text" name="cp" id="cp">
+            <label for="cp">Código postal</label>
+            <input type="text" name="municipio" id="municipio">
+            <label for="municipio">Municipio</label>
+            <select name="provicia" id="provincia">
+                <option value="-1" ></option>
+                <option value="Barcelona">Barcelona</option>
+            </select>
+        </fieldset>
+    </form>
+</body>
+</html>
