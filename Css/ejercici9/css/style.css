@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body {
+    width: 99%;
+    height: 99%;
+}
+form { 
+    width: 80%;
+    margin: 4% auto;
+    padding: 2%;
+    border: 2px solid black;
+    box-shadow: 5px 5px gray;
+    overflow: hidden;
+}
+span { color: red;}
+legend { 
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+label { 
+    display: block;
+    margin-bottom: 2%;
+    padding-left: 2%;
+}
+input { padding-left: 2%;}
+input:hover { border: 2px solid blue;}
+/* css fieldset -> persona */
+    #persona { 
+        width: 50%;
+        float: left;
+        padding: 2%;
+        border: 0;
+    }
+    #persona:hover { background-color: #fcfca7; }
+    #persona:hover #ayuda { display: block;}
+    input#nombre {width: 50%;} 
+    input#PrimerApellido, input#SegundoApellido { width: 100%;}
+/* css fieldset -> direccion */
+    #direccion {
+    width: 50%;
+    float: right;
+    padding: 2%;
+    border: 0;
+    }
+    #direccion:hover { background-color: #fcfca7;}
+    #direccion:hover #ayuda { display: block;}
+    #calle {width: 90%}
+    #Cp { 
+        width: 50%;
+        float: left;
+    }
+    #Municipio {
+        width: 50%;
+        float: right;
+    
+    }
+    #municipio { width: 80%;}
+    #Provincia {
+        width: 50%;
+        float: left;
+    }
+    #provincia {width: 80%;}
+    #Pais{ 
+        width: 50%;
+        float: right;
+    }
+    #pais { width: 80%}
+/* css fieldset -> email */
+    #Email {
+        width: 50%;
+        clear: both;
+        float: left;
+        padding: 2%;
+        border: 0;
+    }
+    #Email:hover { background-color: #fcfca7; }
+    #Email:hover #ayuda { display: block;}
+    #email {width: 90%}
+/* css fielset -> telefono */
+    #telefono {
+        width: 50%;
+        float: right;
+        padding: 2%;
+        border: none;
+    }
+    #telefono:hover #ayuda { display: block;}
+    #telefono:hover { background-color: #fcfca7;}
+    #Fijo { 
+        width: 50%;
+        clear: both;
+        float: left;
+    }
+    #Movil { 
+        width: 50%;
+        float: right;
+    }
+/* css del boton submit */
+    #boton {
+        font-size: 1.5em;
+        clear: both;
+        float: right;
+        margin: 5% 2%;
+    }
+    input[type="submit"] { 
+        padding: 0.5%;
+        text-align: center;
+    }
+/* css texto de ayuda */
+    #ayuda {
+        border: 2px solid red;
+        color: red;
+        display: none;
+        width: 25%;
+        float: right;
+        padding: 0.6%;
+        text-align: center;
+    }
+    
