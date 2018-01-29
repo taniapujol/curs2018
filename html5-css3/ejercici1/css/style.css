@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 99%;
+    height: 99%;
+}
+#wrapper {
+    width: 85%;
+    height: 100%;
+    overflow: hidden;
+    font-size: 1.5em;
+    text-align: center;
+    flex: content;
+    margin:auto;
+}
+header {
+    height: 15%;
+    border: 2px solid orangered;
+    background-color: orangered;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 0.2%;
+}
+nav {
+    height: 5%; 
+    border: 2px solid orangered;
+    background-color: orangered;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 0.2%;
+}
+nav li { 
+    display: inline-block;
+    padding: 5px;
+}
+aside {
+    margin-right: 0.2%;
+    width: 25%;
+    height: 50%;
+    float: left;
+    border: 2px solid orangered;
+    background-color: orangered;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 0.2%;
+}
+article {
+    width: 72%;
+    height: 50%;
+    float: right;
+    border: 2px solid orangered;
+    background-color: orangered;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 0.2%;
+}
+footer { 
+    clear: both;
+    height: 25%;
+    border: 2px solid orangered;
+    background-color: orangered;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 0.2%;
+}
