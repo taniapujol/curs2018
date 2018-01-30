@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nuevas etiquetas para los formularios</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+
+<body>
+    <form action="php/form-php.php" method="post">
+       <h1>FORMULARIO DE ALTA</h1>
+    <fieldset id="DATOS">
+        <legend>
+            <i class="fas fa-address-book"></i>Nombre y apellidos
+            <span>*</span>
+        </legend>
+        <input type="text" name="nombre" id="nombre" required>
+        <label for="nombre">Nombre</label>
+        <input type="text" name="PrimerApellid" id="PrimerApellido" required>
+        <label for="PrimerApellidos">Primer Apellido</label>
+        <input type="text" name="SegundoApellido" id="SegundoApellido" required>
+        <label for="SegundoApellido">Segundo Apellido</label>
+    </fieldset>
+    <fieldset id="DATOS2">
+        <label for="cumpleaños">
+            <i class="fas fa-birthday-cake"></i>
+        </label>
+        <input type="number" name="dia" id="dia" size="2" min="1" max="31">
+        <input type="month" name="mes" id="mes">
+        <input type="file" name="foto" id="foto" multiple>
+    </fieldset>
+    <fieldset id="DIRECCION">
+        <div id="direccion">
+            <label>Direccion</label>
+            <input type="text" name="calle" id="calle" required placeholder="calle">
+            <input type="text" name="num" id="num" placeholder="num" size="3" required placeholder="num">
+            <input type="text" name="piso" id="piso" placeholder="piso" size="3" required>
+            <input type="text" name="puerta" id="puerta" placeholder="puerta" size="3" required>
+        </div>
+        <div id="MUNICIPIO">
+            <input type="text" name="municipio" id="municipio" required list="listaMunicipio">
+            <label for="municipio">Municipio</label>
+             <!-- lista de municipios  -->
+             <datalist id="listaMunicipio">
+                 <option label="Vilanova i la Geltrú" value="vilanova">
+                 <option label="Sant Pere de Ribes" value="st_pere">
+                 <option label="Sitges" value="sitges">
+                 <option label="Cubelles" value="cubelles">
+                 <option label="Roquetes" value="roquetes">
+                 <option label="Olivella" value="olivella">
+             </datalist>
+        </div>
+        <div id="CP">
+            <input type="text" name="cp" id="cp" required size="5">
+            <label for="cp">Código postal</label>
+        </div>
+        <div id="Provincia">
+            <select name="provicia" id="provincia" required>
+                <option value="-1"></option>
+                <option value="barcelona">Barcelona</option>
+                <option value="girona">Girona</option>
+                <option value="lleida">lleida</option>
+                <option value="tarragona">Tarragona</option>
+            </select>
+            <br>
+            <label for="provincia">Provincia</label>
+            <br>
+        </div>
+    </fieldset>
+    <fieldset id="EMAIL">
+        <div id="coreo">
+            <label for="email">
+                <i class="fas fa-envelope"></i>
+            </label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div id="tel">
+            <label for="Tfijo"><i class="fas fa-phone"></i></label>
+            <input type="tel" name="Tfijo" id="Tfijo" required size="9">
+            <label for="Tmovil"><i class="fas fa-mobile"></i></label> 
+            <input type="tel" name="Tmovil" id="Tmovil" required size="9">
+        </div>
+    </fieldset>
+    <fieldset id="PASSWORD">
+        <legend>
+            Username y Password
+        </legend>
+        <label for="username"><i class="fas fa-user-circle"></i></label>
+        <input type="text" name="username" id="username">
+        <label for="password"><i class="fas fa-key"></i></label>
+        <input type="password" name="password" id="password">
+    </fieldset>
+</form>
+    <button type="submit" id="submit"><i class="fas fa-sign-in-alt"></i></button>
+    <button type="reset" id="reset"><i class="fas fa-trash"></i></button>
+
+</body>
+
+</html>

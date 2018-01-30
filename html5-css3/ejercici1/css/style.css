@@ -16,6 +16,7 @@ html, body {
     flex: content;
     margin:auto;
 }
+/* css de la cabecera */
 header {
     height: 15%;
     border: 2px solid orangered;
@@ -23,7 +24,19 @@ header {
     border-radius: 10px;
     color: white;
     margin-bottom: 0.2%;
+    overflow: hidden;
 }
+figure img {
+    width: 10%;
+    height:10%;
+    float: left;
+}
+figcaption { 
+    position: relative;
+    top: 0;
+    left: -35%;
+}
+/* css de el menu navegació */
 nav {
     height: 5%; 
     border: 2px solid orangered;
@@ -32,14 +45,21 @@ nav {
     color: white;
     margin-bottom: 0.2%;
 }
+nav ul { 
+    float: left;
+    margin-left: 0.6%;
+}
 nav li { 
     display: inline-block;
     padding: 5px;
 }
+nav a { text-decoration: none;}
+/* css columna lateral aside */
 aside {
     margin-right: 0.2%;
+    padding-top: 0.6%;
     width: 25%;
-    height: 50%;
+    height: 70%;
     float: left;
     border: 2px solid orangered;
     background-color: orangered;
@@ -47,9 +67,10 @@ aside {
     color: white;
     margin-bottom: 0.2%;
 }
+/* css contenido de la página */
 article {
     width: 72%;
-    height: 50%;
+    height: 70%;
     float: right;
     border: 2px solid orangered;
     background-color: orangered;
@@ -57,9 +78,29 @@ article {
     color: white;
     margin-bottom: 0.2%;
 }
+section {
+    width: 60%;
+    height: 80%;
+    position: relative;
+    margin: 2% auto;
+    border: 2px solid white;
+    background-color: orangered;
+    border-radius: 10px;
+    color: white;
+    overflow: hidden;
+}
+video {
+    border: 5px solid orangered;
+    background-color: orangered;
+    border-radius: 10px;
+    color: white;
+    width: 60%;
+    height: 60%;
+}
+/* css del pie de la página */
 footer { 
     clear: both;
-    height: 25%;
+    height: 5%;
     border: 2px solid orangered;
     background-color: orangered;
     border-radius: 10px;

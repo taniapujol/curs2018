@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body { 
+    width: 99%;
+    height: 99;
+}
+form {
+    width: 90%;
+    height: 100%;
+    background-color: rgb(245, 169, 169);
+    border: 2px solid red;
+    border-radius: 20px;
+    margin: 4% auto;
+    padding: 2%;
+    color: white;
+    overflow: hidden;
+}
+legend {
+    color: red;
+    font-size: 1.5em;
+}
+h1 {text-align: center;}
+i { 
+    font-size: 2em;
+    margin-right: 10px;
+    color: red;
+}
+fieldset { border: none;}
+fieldset:hover { 
+    background-color: white;
+    color: red;
+}
+input:hover { border: 2px solid red; }
+label {
+    margin: 0 5px 5px 5px;
+    display: block;
+}
+#DATOS{
+    width: 50%;
+    float: left;
+    padding: 2%;
+}
+#DATOS input, #DATOS label { display: block;}
+#DATOS2 {
+    width: 50%;
+    float: right;
+    padding: 2%;
+}
+#DIRECCION, #EMAIL, #PASSWORD {
+    clear: both;
+    float: left;
+    padding: 2%;
+    width: 100%;
+}
+#MUNICIPIO, #CP, #PROVINCIA {
+    width: 25%;
+    float: left;
+    margin-right: 10px;
+    overflow: hidden;
+} 
+#direccion { margin-bottom: 10px;}
+input [name="municipio"]{ width: 50%;}
+#PASSWORD { 
+    border: 4px solid red;
+    font-size: 2em;
+    text-align: center;
+}
+#submit, #reset {
+    font-size: 1.5em;
+    float: right;
+    background-color: red;
+    color: white;
+    margin-right: 2%;
+    border: 1px solid red;
+    border-radius: 50px;
+    padding: 2%;
+}
