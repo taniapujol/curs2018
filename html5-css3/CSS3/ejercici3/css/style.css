@@ -1,0 +1,28 @@
+section { 
+    width: 30%;
+    display: inline-block; 
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 2px;
+}
+.contenidor {
+    width: 100%;
+    height: 100%;
+    /*margin: 4% auto;*/
+    background-color: black;
+}
+#content-box { box-sizing: content-box; }
+#padding-box { box-sizing: padding-box; }
+#border-box { box-sizing: border-box; }
+div {
+    width: 25%;
+    height: 25%;
+    overflow: hidden;
+    padding: 5%; 
+    margin: 5%;
+    float: left;
+}
+div p { 
+    color: white;
+    overflow: hidden;
+}
