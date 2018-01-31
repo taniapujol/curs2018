@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin: 2% auto;
+}
+div {
+    width: 300px;
+    height: 300px;
+    margin: 2%;
+    overflow: hidden;
+    background-color: black;
+    border: 2px solid black;
+    color: white;
+    text-align: center;
+    justify-content: center; 
+    font-size: 4em;
+}
+#a {border-bottom-right-radius: 100px;}
+#b {border-bottom-right-radius: 200px 50px;}
+#c {border-bottom-right-radius: 50px 200px;}
+#d {border-radius: 50px 200px;}
+#e {border-radius: 50px;}
+#f {border-radius: 100%;}

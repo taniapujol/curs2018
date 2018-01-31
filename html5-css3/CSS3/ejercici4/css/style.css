@@ -1,0 +1,12 @@
+body { 
+    width: 50%;
+    margin: 4% auto;
+    background-color: grey;
+    font-size: 2em;
+}
+div { 
+    background-color: red;
+    color: white;
+}
+#opaco { opacity: 1;}
+#transparente { opacity: 0.4;}
