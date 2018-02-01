@@ -1,0 +1,37 @@
+* { 
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+p { 
+    font-size: 1.5em;
+}
+div { 
+    width: 300px;
+    height: 150px;
+    margin: 20px;
+    background-color: #ccc;
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* box-shadow : anchura - altura - tamaño de la sombra -difuminado de la sombra - color - dentro o fuera */ 
+#a { box-shadow: -10px -10px 0 5px grey; }
+#b { box-shadow: -10px -10px 20px 2px grey; }
+#c { box-shadow: -16px -16px 0 16px grey;}
+#d { box-shadow: -10px -10px 10px 10px grey;}
+#e { box-shadow: 0 0 50px 0px grey;}
+#f { box-shadow: 0 0 30px 20px grey;}
+#g { box-shadow: inset -10px -10px 0 5px grey;}
+#h { box-shadow: inset -10px -10px 10px 5px grey;}
+#i { box-shadow: inset -16px -16px 0px 10px grey;}
+#j { box-shadow: inset -16px -16px 10px 10px grey;}
+#k { box-shadow: inset 0 0 50px 0 grey;}
+#l { box-shadow: inset 0 0 20px 20px grey;}

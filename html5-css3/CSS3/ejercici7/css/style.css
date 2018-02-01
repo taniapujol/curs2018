@@ -1,0 +1,18 @@
+html, body {
+    width: 99%;
+    height: 99%;
+}
+div {
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+    margin: 5% auto;
+    background-image: url("../img/ribbon.png"), url("../img/decoration.png"), url("../img/old_paper.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom right, top left, top;
+}
+h1 { 
+    text-align: right;
+    font-size: 1.5em;
+    margin-right: 2%;
+}
