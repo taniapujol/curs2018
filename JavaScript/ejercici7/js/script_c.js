@@ -2,9 +2,9 @@
 
     pedir numero
     resultado = 1
-    de resultado hasta numero + 1
-        numero = numero x resultado
-        resultado incrementa
+    de indice=0 hasta indice < numero pedido
+        resultado = resultado x ( numero pedido - indice)
+        indice ingrementa
     fin de de..hasta
 
 /* funcion para mostrar en pantalla el resultado */
@@ -14,7 +14,10 @@ function imprimir(faltorial) {
 }
 /* declaracin de variables */
 var numero = prompt ('introduce el numero a factorial');
-for ( i = 1; resultado > numero; i++ ) {
-    resultado = resultado * i;
+var result = 1;
+for ( i = 0; i < numero; i++ ){
+    result *= (numero - i);
+    console.log (i);
+    console.log (result);
 }
-imprimir(resultado);
+imprimir(result);
