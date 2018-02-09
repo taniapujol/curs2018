@@ -11,14 +11,14 @@
 
     creamos funcion cadenaArray que pasamos el texto como parametro
         texto transformamos en minuscula (.toLowerCase())
-        texto transformamos en array (.split('')) y lo guardamos en cadenaNormal
-        cadenaNormal la invertimos (.reverse()) y lo guardamso en cadenaRevers
         llamos a la funcion CadenaSinEspacios para cadenaNormal y guardamos en cadenaNormal
-        llamos a la funcion CadenaSinEpacios para cadenaRevers y guardamos en cadenaRevers
+        texto transformamos en array (.split('')) y lo guardamos en cadenaNormal
+        creamos una copia de cadenaNormal
+        cadenaNormal la invertimos (.reverse()) y lo guardamso en cadenaRevers
         devolvemos array[cadenaNormal,cadenaRevers]
     fin de funcion
 
-    creamos variable iguales que es booleana a si
+    creamos variable iguales que es booleana
     pedimos texto
     llamamos a la funcion CadenasSinEspacios y lo guardamos en cadena
     de posicion inicial en cadena
@@ -26,6 +26,7 @@
     fin de
     mostramos resultado de iguales
 */
+// creamos funciones necesarias
 function cadena_sin_espacios(array) {
     // Declaración de variable locales
     var CadenaSinEpacios = '';
@@ -36,45 +37,53 @@ function cadena_sin_espacios(array) {
     }
     return CadenaSinEpacios;
 }
-
 function cadenaArray(texto) {
     // Declaración de variable locales
     var cadenaNormal;
     var cadenaRevers;
     var cadenaArray = Array[cadenaNormal, cadenaRevers];
     var texto = texto;
-    texto = texto.toLowerCase();
+    texto = texto.toLowerCase(); // texto transformado en minusculas
     cadenaNormal = cadena_sin_espacios(texto);
     cadenaNormal = cadenaNormal.split('');
-    console.log ('cadenanormal      : '+ cadenaNormal);
-    cadenaRevers = cadenaNormal.reverse();
-    console.log ('cadenainvertida   : '+ cadenaRevers);
+    var cadena = cadenaNormal.slice();
+    //console.log ('cadenanormal      : '+ cadenaNormal);
+    cadenaRevers = cadena.reverse();
+    //console.log ('cadenainvertida   : '+ cadenaRevers);
     cadenaArray = [cadenaNormal, cadenaRevers];
     return cadenaArray;
 }
+function desarollo(text) {
+    var iguales;
+    var resultado;
+    var cadena = [];
+    cadena = cadenaArray(text);
+    var cadena1 = cadena[0];
+    console.log(cadena1);
+    var cadena2 = cadena[1];
+    console.log(cadena2);
+    for (const i in cadena2) {
+        if (cadena1[i] != cadena2[i]) {
+            console.log('cadena1: ' + cadena1[i] + ' cadena2 :  ' + cadena2[i]);
+            iguales = false;
+        } else {
+            console.log('cadena1: ' + cadena1[i] + ' cadena2 :  ' + cadena2[i]);
+            iguales = true;
+        }
+    }
+    if (iguales) {
+        resultado = ('el texto es polindromo');
+    } else {
+        resultado = ('el texto no es polindromo');
+    }
+    return resultado;
+}
+function inicio() {
+    var texto = prompt('Introduce tu texto a comprobar');
+    var resultado = desarollo(texto);
+    alert(resultado);
+}
 // Declaracion de variables globares
-var iguales = true;
-var cadena = [];
-
-// var texto = prompt ('Introduce tu texto a comprobar');
-var texto = 'La ruta nos aporto otro paso natura';
+//--------------------------------------------------------------------
 // codigo del ejercicio
-cadena = cadenaArray(texto);
-var cadena1 = cadena[0];
-console.log(cadena1);
-var cadena2 = cadena[1];
-console.log(cadena2);
-// console.log(cadena);
-// for (var i in cadena1){
-//     if (cadena1[i] === cadena2[i]) {
-//         // console.log('cadena1' + cadena1);
-//         // console.log('cadena2'+ cadena2);
-        
-//         iguales = true;
-//     } else { iguales = false;}
-// }
-// if (iguales) {
-//     alert('el texto es polindromo');
-// } else {
-//     alert('el texto no es polindromo');
-// }
+    inicio();
