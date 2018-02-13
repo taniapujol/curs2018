@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 12 - DOM básico</title>
+</head>
+
+<body>
+	<p>Lorem ipsum dolor sit amet,. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo
+		nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante,
+		ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus
+		magna sem, semper quis, faucibus ut, rhoncus non, mi. Fusce porta. Duis pellentesque, felis eu adipiscing ullamcorper,
+		odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis
+		scelerisque. Donec lacus neque, vehicula in, eleifend vitae, venenatis ac, felis. Donec arcu. Nam sed tortor nec ipsum
+		aliquam ullamcorper. Duis accumsan metus eu urna. Aenean vitae enim. Integer lacus. Vestibulum venenatis erat eu odio.
+		Praesent id metus. <a href="#" id="enlace"><strong>Seguir leyendo ...</strong></a>
+
+		<p id="mas" style="display:none;">
+			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias aut pariatur quidem, at ratione minima cupiditate sunt dolorum impedit nemo ea dignissimos itaque nisi neque tenetur explicabo facere a velit!
+		</p>
+	</p>
+
+
+</body>
+<script>
+	function borrarEnlace(elemento) {
+		var padre = elemento.parentElement;
+		var hijo = elemento;
+		padre.removeChild(hijo);
+	}
+	var enlace = document.getElementById("enlace").addEventListener("click", function () {
+		var parrafo = document.getElementById("mas").style.display="block";
+		borrarEnlace(this);
+	})
+
+</script>
+
+</html>

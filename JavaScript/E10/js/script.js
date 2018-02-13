@@ -66,6 +66,7 @@ function desarollo(text) {
         if (cadena1[i] != cadena2[i]) {
             console.log('cadena1: ' + cadena1[i] + ' cadena2 :  ' + cadena2[i]);
             iguales = false;
+            break;
         } else {
             console.log('cadena1: ' + cadena1[i] + ' cadena2 :  ' + cadena2[i]);
             iguales = true;
@@ -79,11 +80,14 @@ function desarollo(text) {
     return resultado;
 }
 function inicio() {
-    var texto = prompt('Introduce tu texto a comprobar');
+    // var texto = prompt('Introduce tu texto a comprobar');
+    var texto = document.getElementById('entrada').value;
+    console.log(texto);
+    
     var resultado = desarollo(texto);
     alert(resultado);
 }
 // Declaracion de variables globares
 //--------------------------------------------------------------------
 // codigo del ejercicio
-    inicio();
+//--------------------------------------------------------------------
