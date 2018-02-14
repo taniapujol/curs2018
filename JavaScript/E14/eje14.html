@@ -35,17 +35,22 @@
     <a id="enlace_3" href="#">Ocultar contenidos</a>
 </body>
 <script>
-        var links = document.getElementsByTagName("a");
-        for(i=0;i<links.length;i++){
-            links[i].addEventListener("click",mostrar_ocultar);
-        }
+    var links = document.getElementsByTagName("a");
+    // Nos posicionamos en los elemento "a" y le aplicamos a todos el evento click con la funcion mostrar_ocultar
+    for (i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", mostrar_ocultar);
+    }
 
     function mostrar_ocultar() {
-        console.log(this);
-        console.log(this.previousSibling.previousSibling);
-        this.previousSibling.previousSibling.style.display="none";
-        
-        
+        // nos posicionamos en el "p" que hay encima de nuestro elemento "a" lo encontramos con evento previousSibling, y miramos si se encuentra en display none o block y cambiamos su estado
+        if (this.previousSibling.previousSibling.style.display == "none") {       
+            this.previousSibling.previousSibling.style.display = "block";
+            this.innerHTML = "Ocultar contenidos";
+        } else {     
+            this.previousSibling.previousSibling.style.display = "none";
+            this.innerHTML = "Mostrar Elemento";
+        }
     }
 </script>
+
 </html>
