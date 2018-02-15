@@ -11,11 +11,13 @@ html {
     margin: 20px auto;
     padding: 10px;
 
-    background: linear-gradient(to bottom, #ccc 0%, #FFF 65%);
-    background-repeat: no-repeat;
+    background: url("../img/suscribete.png"), linear-gradient(to bottom, #ccc 0%, #FFF 65%);
+    background-repeat: no-repeat, no-repeat;
+    background-position: right  bottom, top;
     border: 5px solid transparent;
     border-radius: 5%;  
 }
+
 h3 { text-align: center;}
 label,
 input {
