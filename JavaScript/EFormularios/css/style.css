@@ -1,0 +1,23 @@
+body,
+html {
+    width: 99%;
+    height: 99%;
+}
+
+#contenedor {
+    width: 80%;
+    height: auto;
+    
+    margin: 20px auto;
+    padding: 10px;
+
+    background: linear-gradient(to bottom, #ccc 0%, #FFF 65%);
+    background-repeat: no-repeat;
+    border: 5px solid transparent;
+    border-radius: 5%;  
+}
+h3 { text-align: center;}
+label,
+input {
+    margin: 0 20px 20px 0;
+}
