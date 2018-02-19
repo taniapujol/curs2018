@@ -1,0 +1,19 @@
+html,body {
+    width: 99%;
+    height: 99%;
+    color: blue;
+    font-size: 20px;
+}
+#contenedor{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+input {
+    background-color: blue;
+    color: #fff;
+    padding: 5px;
+    font-size: 20px;
+}
