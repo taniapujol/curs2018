@@ -1,0 +1,31 @@
+html, body {
+    width: 99%;
+    height: 99%;
+}
+#contenedor {
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+    padding: 10%;
+}
+h1 {
+    font-size: 24px;
+    width: 100%;
+}
+span{ font-size: 36px;}
+#content_fotos {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#fotoGrande{
+    width: 95%;
+    height: 800px;
+    display: block;
+}
+#fotoPequeñas img {
+    width: 200px;
+    height: 200px;
+}
