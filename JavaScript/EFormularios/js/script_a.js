@@ -12,7 +12,7 @@ function limita(event,maxChar) {
 
     if (element.value.length >= maxChar) {
         console.log(result);
-        if (code == 127 || code == 32 || code == 08 || code == 37 || code == 38) {
+        if (code == 127 || code == 32 || code == 08 || code == 37 || code == 39) {
             result = true;
         } 
         result = false;
