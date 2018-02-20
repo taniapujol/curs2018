@@ -2,10 +2,7 @@ window.addEventListener("load", cargarEventos);
 /**/
 
 function cargarEventos() {
-    // infoChar(maxChar);
-    // limita(maxChar);
-    //var maxChar = 20;
-    //console.log(maxChar);
+    document.getElementById("textAria").setAttribute("keydown", "return limita(event,10)")
 }
 
 function limita(event,maxChar) {
@@ -15,7 +12,7 @@ function limita(event,maxChar) {
 
     if (element.value.length >= maxChar) {
         console.log(result);
-        if (code == 127 || code == 32 || code == 08) {
+        if (code == 127 || code == 32 || code == 08 || code == 37 || code == 38) {
             result = true;
         } 
         result = false;

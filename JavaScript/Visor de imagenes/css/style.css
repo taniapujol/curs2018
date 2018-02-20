@@ -1,31 +1,124 @@
-html, body {
+html,
+body {
     width: 99%;
     height: 99%;
+    background-color: black;
 }
+
 #contenedor {
-    width: 90%;
-    height: auto;
-    margin: 20px auto;
+    width: 95%;
+    height: 95%;
     padding: 10%;
 }
+
 h1 {
-    font-size: 24px;
+    font-size: 2em;
     width: 100%;
+    text-align: center;
+    background-image: url("../img/fondo.jpg");
+    color: #fff;
 }
-span{ font-size: 36px;}
+
+span {
+    font-size: 3em;
+}
+
 #content_fotos {
+    width: 100%;
+    min-height: 900px;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-#fotoGrande{
-    width: 95%;
+#content-grande {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#fotoGrande {
+    width: 800px;
     height: 800px;
     display: block;
+    background-image: url("../img/india.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 2px solid #fff;
+    border-radius: 10%;
+    margin-bottom: 50px;
+    position: relative;
 }
-#fotoPequeñas img {
-    width: 200px;
-    height: 200px;
+img {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+p { 
+    font-size: 2em;
+    position: absolute;
+    bottom: 40px;
+    text-align: center;
+    width: 90%;
+    background-color: rgba(255, 255, 255, .6);
+    border-radius: 10px 196px 200px 10px;
+}
+.img {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border: 2px solid #fff;
+}
+.img:hover {
+    border: 2px solid red;
+}
+
+#fotosPequeñas {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    
+}
+
+#foto1,
+#foto2,
+#foto3,
+#foto4,
+#foto5,
+#foto6,
+#foto7 {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#foto1 {
+    background-image: url("../img/brasil.jpg");
+}
+
+#foto2 {
+    background-image: url("../img/china.jpg");
+}
+
+#foto3 {
+    background-image: url("../img/egipto.jpg");
+}
+
+#foto4 {
+    background-image: url("../img/india.jpg");
+}
+
+#foto5 {
+    background-image: url("../img/italia.jpg");
+}
+
+#foto6 {
+    background-image: url("../img/mexico.jpg");
+}
+
+#foto7 {
+    background-image: url("../img/peru.jpg");
 }
