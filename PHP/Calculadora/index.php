@@ -12,10 +12,13 @@
 </head>
 
 <body>
+    <?php 
+        include('funciones.php');
+    ?>
     <div class="titulo">
         <h1>Calculadora</h1>
     </div>
-    <form >
+    <form  method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div class="calculadora">
             <!--Introducimos el campo de display -->
             <header class="top">
@@ -38,15 +41,29 @@
                 <input type="button" name="btn" value="2" class="btn">
                 <input type="button" name="btn" value="3" class="btn">
                 <input type="button" name="por" value="&times" class="btn">
-                <input type="button" name="igual" value="=" class="btn igual">
+                <input type="submit" name="igual" value="=" class="btn igual">
                 <input type="button" name="btn" value="0" class="btn zero">
                 <input type="button" name="btn" value="." class="btn">
                 <input type="button" name="divi" value="/" class="btn">
-                <input type="button" name="elevado" value="x^y" class="btn masOp">
             </div>
         </div>
     </form>
+    <?php 
+    
+    if (isset($igual)) {   
+        $operacion = $_POST['op'];
+        $num1 = $_POST['num1'];
+        $display = $_GET['display'];
+        echo('ha enviado');
+        echo($operacion.'<br>'.$num1.'<br>'.$display);
+    }
+    ?>
+    <!-- Cargando jquery-3 y calculadora.js  -->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
 </body>
-</body>
-
 </html>

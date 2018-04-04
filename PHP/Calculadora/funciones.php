@@ -50,4 +50,7 @@ function calculadora($operacion,$x,$y)
             break;        
     }
 }
+
+// funcion obtener valor del display
+
 ?>
