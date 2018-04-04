@@ -27,7 +27,7 @@
                 case 'primavera':
                     $class_bg ='img/primavera.png';    
                     break;
-                case 'otoño':
+                case 'otono':
                     $class_bg ='img/otoño.png';    
                     break;
                 case 'verano':
