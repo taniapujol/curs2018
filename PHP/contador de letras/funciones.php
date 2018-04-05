@@ -20,6 +20,5 @@
         echo('<br>');    
         print_r($menorCaracter);
         echo('<br>');
-        print_r(array_keys($topCaracter));
     }
 ?>
