@@ -6,34 +6,22 @@ h5{
     padding: 1.5em;
 }
 #lista ul{
-    list-style-type: none;
+    list-style: none;
+    width: 200px;
 }
 #lista li {
+    width: 100%;
     margin: 5px;
+    box-shadow: 4px solid rgba(255, 255, 255, 0.2) inset !important;
+    transition: all 2s;
 }
 #lista ul li a {
-    position: relative;
-    /* overflow: hidden; */
     text-decoration: none;
     color: blue;
     display: block;
-    transition: all 2s ease-in-out;
+    width: 100%;
+    
 }
-#lista ul li a:before{
-    content: '';
-    width: 8%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    left: -40px;
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
-    background-color: rgba(255, 255, 255, 0.884);
-}
-#lista ul li a:hover:before{
-   width: 100%;
-}
-#lista a:hover{
-    color: black;
-    background-color: transparent;
+#lista ul li:hover {
+    box-shadow: 200px solid rgba(255, 255, 255, 0.2) inset !important;
 }

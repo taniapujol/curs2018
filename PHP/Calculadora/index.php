@@ -13,12 +13,12 @@
 
 <body>
     <?php 
-        include('funciones.php');
+        include('biblioteca/funciones.php');
     ?>
     <div class="titulo">
         <h1>Calculadora</h1>
     </div>
-    <form  method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <form action="biblioteca/form-php.php" method="get">
         <div class="calculadora">
             <!--Introducimos el campo de display -->
             <header class="top">
@@ -50,13 +50,7 @@
     </form>
     <?php 
     
-    if (isset($igual)) {   
-        $operacion = $_POST['op'];
-        $num1 = $_POST['num1'];
-        $display = $_GET['display'];
-        echo('ha enviado');
-        echo($operacion.'<br>'.$num1.'<br>'.$display);
-    }
+    
     ?>
     <!-- Cargando jquery-3 y calculadora.js  -->
     <script

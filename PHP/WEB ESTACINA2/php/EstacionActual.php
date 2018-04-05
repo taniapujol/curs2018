@@ -11,8 +11,7 @@
 
         // Recogemos en la variable mesActual con la función date(), el mes en que nos encontramos.
         $mesActual= date("n");
-        //var_dump($mesActual);  //compruebo la solución que nos da la función date
-
+        
         // Crear una estructura de control de flujo que en función del contenido de $mesactual almacene el nombre de la estación correspondiente
         switch (true) {
             case in_array($mesActual,$primavera):
@@ -28,5 +27,4 @@
                 $estacion = 'otono';
                 break;
         }
-        //var_dump($estacion);
 ?>

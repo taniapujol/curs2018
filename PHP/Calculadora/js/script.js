@@ -17,7 +17,7 @@ $(document).ready(function () {
         if ($("#display").val() != bacio) {
             valor1 = parseFloat($("#display").val());
             operacion='suma';
-            $.post("index.php",{num1:valor1, op:operacion});
+            $.post("biblioteca/form-php.php",{num1:valor1, op:operacion});
             $("#display").val(bacio);
             $(".op").text($(this).val());
         } else {
@@ -31,7 +31,7 @@ $(document).ready(function () {
         if ($("#display").val() != bacio) {
             valor1 = parseFloat($("#display").val());
             operacion='resta';
-            $.post("index.php",{num1:valor1, op:operacion});
+            $.post("biblioteca/form-php.php",{num1:valor1, op:operacion});
             $("#display").val(bacio);
             $(".op").text($(this).val());
         } else {
@@ -45,7 +45,7 @@ $(document).ready(function () {
         if ($("#display").val() != bacio) {
             valor1 = parseFloat($("#display").val());
             operacion='multiplicar';
-            $.post("index.php",{num1:valor1, op:operacion});
+            $.post("biblioteca/form-php.php",{num1:valor1, op:operacion});
             $("#display").val(bacio);
             $(".op").text($(this).val());
         } else {
@@ -59,7 +59,7 @@ $(document).ready(function () {
         if ($("#display").val() != bacio) {
             valor1 = parseFloat($("#display").val());
             operacion = 'dividir';
-            $.post("index.php",{num1:valor1, op:operacion});
+            $.post("biblioteca/form-php.php",{num1:valor1, op:operacion});
             $("#display").val(bacio);
             $(".op").text($(this).val());
         } else {
@@ -79,12 +79,7 @@ $(document).ready(function () {
         $("#display").val(valor);
         if (testeo) console.log(len,valor);
     });
-    // Funcion resultado (Boton (=))
-    // $("input[name=ingual").click(function(){
-    //     if (($("#display").val() != bacio) && (valor1 != bacio)) {
-    //         $("form").submit();
-    //     }
-    // });
+    
     
     // Fin js
 });
