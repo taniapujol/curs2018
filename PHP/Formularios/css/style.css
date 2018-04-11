@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+    margin: auto;
+}
+.container{
+    width: 400px;
+    height: auto;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid black;
+    box-shadow: 10px 10px 5px grey;
+}
+input {
+    margin: 5px 0;
+    width: 100%;
+}
+.obligatorio {
+    margin: 10px 0;
+    padding: 5px;
+    border:2px solid black;
+    border-radius: 10px;
+    color: red;
+    text-align:center;
+    position: relative;
+}
+.obligatorio::after {
+    content: '';
+    position: absolute;
+    left: 5%;
+    top: -40%;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid black;
+    clear: both;
+}
