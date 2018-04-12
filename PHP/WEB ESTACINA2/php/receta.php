@@ -14,7 +14,12 @@
 <body>
     <header>
         <!-- incluimos la barra de navegación -->
-        <?php include('navBar.php');?> 
+        <?php
+            if (isset($_GET['pages'])) {
+                $page = $_GET['pages'];
+            } else { $page = 'index';} 
+            include('navBar.php');
+        ?> 
     </header> 
     <seccion>
         <div class="container" style="margin:20px;">

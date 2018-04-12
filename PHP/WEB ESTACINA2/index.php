@@ -15,7 +15,11 @@
 <body>
     <header>
         <!-- incluimos la barra de navegación y el php que nos calcula la estacion donde nos encontramos -->
-        <?php include('php/navBar.php'); ?>
+        <?php 
+            if (isset($_GET['pages'])) {
+                $page = $_GET['pages'];
+            } else { $page = 'index';}
+            include('php/navBar.php'); ?>
         <?php include('php/EstacionActual.php'); ?>
         <!-- Pintamos el fondo del jumbotron sengun la estación -->
         <?php
