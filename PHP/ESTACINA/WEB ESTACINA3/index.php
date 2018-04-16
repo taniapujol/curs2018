@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ESTACINA 2</title>
+    <title>ESTACINA 3</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .Ancho{ width: 18rem;}
     </style>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
 </head>
 
 <body>
@@ -19,8 +20,8 @@
             if (isset($_GET['pages'])) {
                 $page = $_GET['pages'];
             } else { $page = 'index';}
-            include('php/navBar.php'); ?>
-        <?php include('php/EstacionActual.php'); ?>
+            include('php/biblioteca/navBar.php'); ?>
+        <?php include('php/biblioteca/EstacionActual.php'); ?>
         <!-- Pintamos el fondo del jumbotron sengun la estación -->
         <?php
             $class_bg;
@@ -53,26 +54,44 @@
                 <?php 
                     // guardamos en la variable directorio donde encontramos los archivos que queremos buscar
                     $directorio = 'txt';
-                    // guardamos en la variable carpeta todos los ficheros que tengo
-                    $carpeta = scandir($directorio);
+                    $carpeta='';
+                    switch ($estacion) {
+                        // guardamos en la variable carpeta todos los ficheros que tengo de la estacion actual
+                        case 'invierno':
+                            $carpeta = scandir('estaciones/'.$estacion.'/'.$directorio);
+                            // echo $estacion;
+                            break;
+                        case 'primavera':
+                            $carpeta = scandir('estaciones/'.$estacion.'/'.$directorio);    
+                            // echo 'estaciones/'.$estacion.'/'.$directorio;
+                            break;
+                        case 'otono':
+                            $carpeta = scandir('estaciones/'.$estacion.'/'.$directorio);    
+                            // echo $estacion;
+                            break;
+                        case 'verano':
+                            $carpeta = scandir('estaciones/'.$estacion.'/'.$directorio);    
+                            // echo $estacion;
+                            break;
+                    }
                     foreach ($carpeta as $ficheros) {
-                        // escojo los ficheros solo con extencion '.txt' y elimino los '.' y '..'
-                        if ($ficheros != "." && $ficheros != ".." && substr($ficheros,-4)=='.txt') {
+                    // escojo los ficheros solo con extencion '.txt' y elimino los '.' y '..'
+                    if ($ficheros != "." && $ficheros != ".." && substr($ficheros,-4)=='.txt') {
                 ?>
                 <div class="col" style="margin-top:20px">
                     <?php 
                         // la funcion explode divide en dos array segun el caracter que le pasamos -> '.'
                         $fichero = explode('.', $ficheros);
-                        // echo($fichero[0].','.$fichero[1]);
+                        // print $fichero[0];
                     ?>
                     <div class="card Ancho">
-                        <img class="card-img-top" src="<?='img/'.$fichero[0].'.jpg'?>" alt="Card image cap">
+                        <img class="card-img-top" src="<?='estaciones/'.$estacion.'/img/'.$fichero[0].'.jpg'?>" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">
                                 <?=$fichero[0]?>
                             </h5>
-                            <!-- le pasamos por parametro atraves del enlace el fichero que queremos abrir. la estructura es: <a href="archivo_donde_se_abrira?variable=pasamos por php el fichero" -->
-                            <a href="php/receta.php?receta=<?=$directorio.'/'.$ficheros?>" class="btn btn-primary" target="_blank">Ver Receta</a>
+                            <!-- le pasamos por parametro atraves del enlace la ruta del fichero que queremos abrir. la estructura es: <a href="archivo_donde_se_abrira?variable=pasamos por php el fichero" -->
+                            <a href="pages/receta.php?receta=<?='estaciones/'.$estacion.'/'.$directorio.'/'.$ficheros?>" class="btn btn-primary">Ver Receta</a>
                         </div>
                     </div>
                 </div>
@@ -80,7 +99,7 @@
                     <?php } //cierre de foreach ?>
             </div>
         </div>
-
+                           
     </seccion>
     <!-- Scripts de boostrap -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

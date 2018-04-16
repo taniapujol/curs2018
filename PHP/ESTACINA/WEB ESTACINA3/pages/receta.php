@@ -9,6 +9,7 @@
     <!-- link de bootstrap para css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
 </head>
 
 <body>
@@ -18,7 +19,7 @@
             if (isset($_GET['pages'])) {
                 $page = $_GET['pages'];
             } else { $page = 'index';} 
-            include('navBar.php');
+            include('../php/biblioteca/navBar.php');
         ?> 
     </header> 
     <seccion>
@@ -28,14 +29,37 @@
                     <h5>Index de recetas</h5>
                     <ul>
                         <?php
+                        // imprimir todas las recetas en el index de recetas 
                             $directorio = 'txt';
-                            $carpeta = scandir('../'.$directorio);
+                            $carpetaEstacion= '';
+                            $carpetaInvierno = scandir('../estaciones/invierno/'.$directorio);
+                            $carpetaPrimavera = scandir('../estaciones/primavera/'.$directorio);
+                            $carpetaOtono = scandir('../estaciones/otono/'.$directorio);
+                            $carpetaVerano = scandir('../estaciones/verano/'.$directorio);
+                            // unimos en una sola variable todos los scandir realizados
+                            $carpeta =  array_merge($carpetaInvierno,$carpetaPrimavera,$carpetaOtono,$carpetaVerano);
+                            // recoremos la variable carpeta para extraer los archivos.
                             foreach ($carpeta as $ficheros) {
                                 if ($ficheros != "." && $ficheros != "..") {
                                     $fichero = explode('.', $ficheros);
                         ?>
                         <li>
-                            <a href="#" onclick="cargarContenido('<?='../'.$directorio.'/'.$ficheros?>')">
+                            <?php 
+                                if ( in_array($ficheros,$carpetaInvierno) ) {
+                                    $carpetaEstacion='invierno';
+                                }
+                                if ( in_array($ficheros,$carpetaPrimavera) ) {
+                                    $carpetaEstacion='primavera';
+                                }
+                                if ( in_array($ficheros,$carpetaOtono) ) {
+                                    $carpetaEstacion='otono';
+                                }
+                                if ( in_array($ficheros,$carpetaVerano) ) {
+                                    $carpetaEstacion='verano';
+                                }
+                                $urlFichero = '../../estaciones/'.$carpetaEstacion.'/'.$directorio.'/'.$ficheros;
+                            ?>
+                            <a href="#" onclick="cargarContenido('<?= $urlFichero ?>')">
                                 <?=$fichero[0]?>
                             </a>
                         </li>
@@ -48,7 +72,7 @@
                          
                         if (!$_POST){
                             $fichero = $_GET["receta"];
-                            include('print.php');
+                            include('../php/biblioteca/print.php');
                         }
                     ?>
                 </div>

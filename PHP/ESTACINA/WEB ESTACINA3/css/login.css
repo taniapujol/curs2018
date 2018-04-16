@@ -1,0 +1,25 @@
+body{
+    margin: 15% auto;
+    box-sizing: border-box;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+i{color:black;}
+form{ 
+    width: 415px;
+    height: 415px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+input{
+    display: block;
+    margin: 10px;
+    text-align: center;
+    
+}

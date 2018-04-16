@@ -55,7 +55,7 @@
                     $displayEmail = 'block';
                 }
             }
-           } ?>
+        } ?>
     <!-- Formulario -->
     <div class="container">
         <form action="formulario.php" method="post">
