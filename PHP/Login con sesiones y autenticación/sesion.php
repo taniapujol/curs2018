@@ -12,16 +12,30 @@
 <body>
     <?php
         if (isset($_SESSION['usuario'])) { ?>
-            <br>
-            <br>
-            <br>
             <h1>Buenos Dias, <?=$_SESSION['usuario']?> </h1>
-            <br>
-            <br>
-            <br>
-            
+            <form action="" method="post">
+                <input type="submit" name="cerrar" value="CERRAR SESION">
+            </form>
+               
+            <?php 
+             if (isset($_REQUEST['cerrar'])){
+                // echo 'cerrar session habilitado';
+                session_destroy();
+                /* Redirecciona a una página diferente en el mismo directorio el cual se hizo la petición */
+                $host  =   $_SERVER['HTTP_HOST'];
+                $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+                $extra = 'login.php';
+                header("Location: http://$host$uri/$extra");
+                exit;
+             }
+            ?>         
         <?php } else {
-            header('login.php');
+            /* Redirecciona a una página diferente en el mismo directorio el cual se hizo la petición */
+            $host  =   $_SERVER['HTTP_HOST'];
+            $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+            $extra = 'login.php';
+            header("Location: http://$host$uri/$extra");
+            exit;
         }
     ?>
 </body>

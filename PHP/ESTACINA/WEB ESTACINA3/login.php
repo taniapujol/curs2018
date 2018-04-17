@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,20 +13,41 @@
 </head>
 <body>
 <?php 
+    // inicializaciones de variables
     $username = '';
     $password = '';
     $mensaje = '';
     $color = 'white';
+    // creamos los usuarios permitido para login
+    $usuarios = array(
+        'juan'      => 123 ,
+        'tania'     => 456 ,
+        'carles'    => 789 );
     if (isset($_POST['login'])) {
+        
+        // recogemos los inputs del formulario
         $username = $_POST['user'];
         $password = $_POST['password'];
+
+        // comprovacion de datos primero si es administrador y despues si es usuario
         if ($username == 'JEFE' && $password == 'JEFE-2018') {
-            ECHO('USUARIO CORRECTO');
+            $_SESSION['usuario'] = $username;
+            $_SESSION['tipo']='admin';
             /* Redirecciona a una página diferente en el mismo directorio el cual se hizo la petición */
             $host  = $_SERVER['HTTP_HOST'];
             $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
             $extra = 'BackEnd/backEnd.php';
             header("Location: http://$host$uri/$extra");
+            exit;
+        } elseif (array_key_exists($username,$usuarios) && $password == $usuarios[$username]) {
+            $_SESSION['usuario'] = $username;
+            $_SESSION['tipo']='usuario';
+            /* Redirecciona a una página diferente en el mismo directorio el cual se hizo la petición */
+            $host  =   $_SERVER['HTTP_HOST'];
+            $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+            $extra = 'BackEnd/backEnd.php';
+            header("Location: http://$host$uri/$extra");
+            exit;
         } else {
             $username = '';
             $password = '';

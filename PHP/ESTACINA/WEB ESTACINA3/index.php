@@ -20,8 +20,9 @@
             if (isset($_GET['pages'])) {
                 $page = $_GET['pages'];
             } else { $page = 'index';}
-            include('php/biblioteca/navBar.php'); ?>
-        <?php include('php/biblioteca/EstacionActual.php'); ?>
+            include('php/biblioteca/navBar.php');
+            include('php/biblioteca/EstacionActual.php'); 
+        ?>
         <!-- Pintamos el fondo del jumbotron sengun la estación -->
         <?php
             $class_bg;
