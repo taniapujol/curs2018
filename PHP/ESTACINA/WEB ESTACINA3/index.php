@@ -11,6 +11,7 @@
         .Ancho{ width: 18rem;}
     </style>
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
 </head>
 
 <body>

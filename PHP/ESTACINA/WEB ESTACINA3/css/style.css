@@ -1,27 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans');
+
 h5{
     color:white!important; 
+}
+h1{
+    text-align: center;
+    background-color:white;
+    color:black;
+    font-family: fantasy; 
+    width:95%;
+    border-radius:20px;
+    margin-top: 20px;
 }
 #lista {
     background-color:black;
     padding: 1.5em;
 }
-#lista ul{
+#lista ul, ul{
     list-style: none;
     width: 200px;
 }
-#lista li {
+#lista li, li {
     width: 100%;
     margin: 5px;
     box-shadow: 4px solid rgba(255, 255, 255, 0.2) inset !important;
     transition: all 2s;
 }
-#lista ul li a {
+#lista ul li a, ul li a {
     text-decoration: none;
     color: blue;
     display: block;
     width: 100%;
-    
 }
-#lista ul li:hover {
+ul li a{
+    color: white;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 1.2em;
+    margin: 5px auto;
+}
+#lista ul li:hover, ul li:hover {
     box-shadow: 200px solid rgba(255, 255, 255, 0.2) inset !important;
 }
+#content {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+#mover, #ver, #borrar, #crear{
+    display: none;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+.form-crear {
+    width: 500px;
+    height: 400px;    
+    position: relative;
+}
+.form-crear label[for="archivo"]{
+    margin-top: 30px;
+}
+.form-crear input[type='text']{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.form-crear input[name='crear']{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 20px;
+}
+.form-crear input[type="checkbox"] { margin-left: 20px;}

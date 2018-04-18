@@ -1,7 +1,7 @@
 body{
     margin: 15% auto;
     box-sizing: border-box;
-    /* background-color: black; */
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
