@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ESTACINA 3</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    <!-- <style>
         .Ancho{ width: 18rem;}
-    </style>
+    </style> -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
 </head>

@@ -6,9 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ESTACINA 2</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .Ancho{ width: 18rem;}
-    </style>
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
 </head>
 <body>
@@ -18,8 +15,8 @@
             if (isset($_GET['pages'])) {
                 $page = $_GET['pages'];
             } else { $page = 'index';}
-            include('../php/navBar.php'); ?>
-        <?php include('../php/EstacionActual.php'); ?>
+            include('../php/biblioteca/navBar.php'); ?>
+        <?php include('../php/biblioteca/EstacionActual.php'); ?>
         <!-- Pintamos el fondo del jumbotron sengun la estación -->
         <?php
             $class_bg;

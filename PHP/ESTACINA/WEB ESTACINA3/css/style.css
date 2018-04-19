@@ -12,6 +12,7 @@ h1{
     border-radius:20px;
     margin-top: 20px;
 }
+#singIN:hover{ color:black !important;}
 #lista {
     background-color:black;
     padding: 1.5em;

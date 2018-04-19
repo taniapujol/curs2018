@@ -14,7 +14,7 @@ if (isset($_POST['crear'])) {
     // si se ha realizado una subida de archivos. hacemos =>
     if(is_uploaded_file($_FILES['archivo']['tmp_name'])){
         // comprovamos si el archivo es con la extension .txt
-         echo($_FILES['archivo']['type'].'<br>');
+        // echo($_FILES['archivo']['type'].'<br>');
         if ($_FILES['archivo']['type'] == $archivo) {
             // recorremos la array de estaciones
             foreach($estaciones as $estacion) {
@@ -25,7 +25,7 @@ if (isset($_POST['crear'])) {
                 // mensaje segun el error dado por la subida de archivo
                 switch ($_FILES['archivo']['error']) {
                     case '0':
-                        echo 'Archivo correctamente';
+                        echo 'Archivo correctamente en '.$estacion.'<br>';
                         break;
                     case '1':
                         echo 'El archivo cargado excede la directiva upload_max_filesize en php.ini.';
@@ -39,9 +39,6 @@ if (isset($_POST['crear'])) {
                     case '4':
                         echo 'Ningun archivo fue subido.';
                         break;
-                    // case '5':
-                    //     echo '';
-                    //     break;
                     case '6':
                         echo 'Falta una carpeta temporal. Introducido en PHP 5.0.3.';
                         break;
