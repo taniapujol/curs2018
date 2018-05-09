@@ -110,3 +110,59 @@ WHERE
 Resultado<br> 
 ![Ejemplo resultado](images/result_2.c.antes.png)
 ![Ejemplo resultado](images/result_2.c.despues.png)
+
++ d. Borrar las líneas de pedido de los pedidos del cliente Jaime Llorens.
+```sql
+
+```
+Resultado<br> 
+![Ejemplo resultado](images/result_2.c.antes.png)
+![Ejemplo resultado](images/result_2.c.despues.png)
+
++ e. Aumentar un 5% el precio de todos los productos del fabricante ACI.
+```sql
+
+```
+Resultado<br> 
+![Ejemplo resultado](images/result_2.c.antes.png)
+![Ejemplo resultado](images/result_2.c.despues.png)
+
++ f. Añadir una nueva oficina para la ciudad de Madrid, con numero de oficina 30, un objetivo de 600 y región centro.
+```sql
+
+```
+Resultado<br> 
+![Ejemplo resultado](images/result_2.c.antes.png)
+![Ejemplo resultado](images/result_2.c.despues.png)
+
++ g. Cambiar los empleados de la oficina 21 a la oficina 30.
+```sql
+
+```
+Resultado<br> 
+![Ejemplo resultado](images/result_2.c.antes.png)
+![Ejemplo resultado](images/result_2.c.despues.png)
+
++ h. Eliminar los pedidos del empleado 105.
+```sql
+
+```
+Resultado<br> 
+![Ejemplo resultado](images/result_2.c.antes.png)
+![Ejemplo resultado](images/result_2.c.despues.png)
+
++ i. Subir un 10% el salario de los empleados cuya oficina haya superado sus objetivos de venta.
+```sql
+
+```
+Resultado<br> 
+![Ejemplo resultado](images/result_2.c.antes.png)
+![Ejemplo resultado](images/result_2.c.despues.png)
+
++ j. Eliminar las oficinas que no tengan empleados.
+```sql
+
+```
+Resultado<br> 
+![Ejemplo resultado](images/result_2.c.antes.png)
+![Ejemplo resultado](images/result_2.c.despues.png)
