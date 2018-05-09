@@ -1,5 +1,5 @@
 <?php 
-echo'subir archivos funciona <br>';
+// echo'subir archivos funciona <br>';
 $nombre='';
 $estaciones= array();
 $archivo='text/plain';
@@ -25,7 +25,10 @@ if (isset($_POST['crear'])) {
                 // mensaje segun el error dado por la subida de archivo
                 switch ($_FILES['archivo']['error']) {
                     case '0':
-                        echo 'Archivo correctamente en '.$estacion.'<br>';
+                        print('
+                        <div style="background-color: black; color:white; witdh:95%; padding:20px 10px; text-align: center; font-size: 24px; margin:20px 20px">
+                        <strong>Archivo de texto correctamente <span style="color:yellow">Guardado</span>!!!</strong>  en <span style="color:blue;  text-transform:uppercase">'.$estacion.'</span><br>    
+                    </div>');
                         break;
                     case '1':
                         echo 'El archivo cargado excede la directiva upload_max_filesize en php.ini.';
@@ -49,6 +52,7 @@ if (isset($_POST['crear'])) {
                         echo 'La extensión de PHP detuvo la carga del archivo. PHP no proporciona una forma de determinar qué extensión causó la detención de la carga del archivo; examinar la lista de extensiones cargadas con phpinfo () puede ser útil. Introducido en PHP 5.2.0.';
                         break;               
                 }
+                print ('<a href="../BackEnd/backEnd.php" style="background-color:red; color:white;margin:auto"><strong><u>Volver</u></strong></a>');
             }
 
         } else {
@@ -59,7 +63,7 @@ if (isset($_POST['crear'])) {
     // si se ha realizado una subida de imagen. hacemos =>
     if(is_uploaded_file($_FILES['imagen']['tmp_name'])){
         // comprovamos si la extension del archivo imagen se encuentra en la array extensiones permididas
-        echo ($_FILES['imagen']['type']).'<br>';
+        // echo ($_FILES['imagen']['type']).'<br>';
         if (in_array($_FILES['imagen']['type'],$imagenArray)) {
             // recorremos la array de estaciones
             foreach($estaciones as $estacion) {
@@ -70,7 +74,10 @@ if (isset($_POST['crear'])) {
                 // mensaje segun el error dado por la subida de archivo
                 switch ($_FILES['imagen']['error']) {
                     case '0':
-                        echo 'Archivo correctamente';
+                    print('
+                    <div style="background-color: black; color:white; witdh:95%; padding:20px 10px; text-align: center; font-size: 24px; margin:20px 20px">
+                        <strong>Archivo de imagen correctamente <span style="color:yellow">Guardado</span>!!!</strong>  en <span style="color:blue;  text-transform:uppercase">'.$estacion.'</span><br>     
+                    </div>');
                         break;
                     case '1':
                         echo 'El archivo cargado excede la directiva upload_max_filesize en php.ini.';
@@ -97,6 +104,7 @@ if (isset($_POST['crear'])) {
                         echo 'La extensión de PHP detuvo la carga del archivo. PHP no proporciona una forma de determinar qué extensión causó la detención de la carga del archivo; examinar la lista de extensiones cargadas con phpinfo () puede ser útil. Introducido en PHP 5.2.0.';
                         break;               
                 }
+                print ('<a href="../BackEnd/backEnd.php" style="background-color:red; color:white; margin auto"><strong><u>Volver</u></strong></a>');
             }
         } else {
             $mensajeError = 'Archivo con extension no correcta, suba archivos solo con estension png, jpg, bmp, svg, o jpeg.';
