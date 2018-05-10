@@ -113,51 +113,87 @@ Resultado<br>
 
 + d. Borrar las líneas de pedido de los pedidos del cliente Jaime Llorens.
 ```sql
-
+DELETE FROM linea_pedido 
+WHERE
+    fid_pedido IN (SELECT 
+        p.id_pedido
+    FROM
+        clientes c
+            INNER JOIN
+        pedido p ON p.fid_cliente = c.id_cliente
+    
+    WHERE
+        c.nombre = 'Jaime Llorens'); 
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.c.antes.png)
-![Ejemplo resultado](images/result_2.c.despues.png)
+![Ejemplo resultado](images/result_2.d.antes.png)
+![Ejemplo resultado](images/result_2.d.despues.png)
 
 + e. Aumentar un 5% el precio de todos los productos del fabricante ACI.
 ```sql
-
+UPDATE productos 
+SET 
+    precio = precio + (precio * 0.05)
+WHERE
+    id_fabricante = 'aci';
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.c.antes.png)
-![Ejemplo resultado](images/result_2.c.despues.png)
+![Ejemplo resultado](images/result_2.e.antes.png)
+![Ejemplo resultado](images/result_2.e.despues.png)
 
 + f. Añadir una nueva oficina para la ciudad de Madrid, con numero de oficina 30, un objetivo de 600 y región centro.
 ```sql
-
+INSERT INTO oficinas VALUES(30,'Madrid','centro',NULL,600,NULL);
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.c.antes.png)
-![Ejemplo resultado](images/result_2.c.despues.png)
+![Ejemplo resultado](images/result_2.f.antes.png)
+![Ejemplo resultado](images/result_2.f.despues.png)
 
 + g. Cambiar los empleados de la oficina 21 a la oficina 30.
 ```sql
-
+UPDATE empleados 
+SET 
+    fid_oficina = 30
+WHERE
+    fid_oficina = 21;
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.c.antes.png)
-![Ejemplo resultado](images/result_2.c.despues.png)
+![Ejemplo resultado](images/result_2.g.antes.png)
+![Ejemplo resultado](images/result_2.g.despues.png)
 
 + h. Eliminar los pedidos del empleado 105.
 ```sql
-
+#pasamos la clave foranea a cascade
+ALTER TABLE `empresa_copy`.`linea_pedido` 
+DROP FOREIGN KEY `FK_pedido_linea_pedido`;
+ALTER TABLE `empresa_copy`.`linea_pedido` 
+ADD CONSTRAINT `FK_pedido_linea_pedido`
+  FOREIGN KEY (`fid_pedido`)
+  REFERENCES `empresa_copy`.`pedido` (`id_pedido`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE;
+#eliminamos los pedidos del empleado 105 y a su vez se eliminan la linea de pedido asignados a esos pedidos
+DELETE p FROM pedido as p
+WHERE
+    p.fid_vendedor = 105;
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.c.antes.png)
-![Ejemplo resultado](images/result_2.c.despues.png)
+![Ejemplo resultado](images/result_2.h.antes.png)
+![Ejemplo resultado](images/result_2.h.despues.png)
 
 + i. Subir un 10% el salario de los empleados cuya oficina haya superado sus objetivos de venta.
 ```sql
-
+UPDATE empleados AS e,
+    oficinas AS o 
+SET 
+    e.salario = e.salario + (e.salario * 0.1)
+WHERE
+    e.fid_oficina = o.id_oficina
+        AND o.objetivo < o.ventas;
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.c.antes.png)
-![Ejemplo resultado](images/result_2.c.despues.png)
+![Ejemplo resultado](images/result_2.i.antes.png)
+![Ejemplo resultado](images/result_2.i.despues.png)
 
 + j. Eliminar las oficinas que no tengan empleados.
 ```sql
