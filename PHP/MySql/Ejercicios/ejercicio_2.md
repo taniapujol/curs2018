@@ -11,7 +11,7 @@ FROM
     linea_pedido lp ON (p.id_pedido = lp.fid_pedido);
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_1.png)
+![Ejemplo resultado](images/ejercicio2/result_1.png)
 # Consulta con LEFT OUTER JOIN sql
 ```sql
 SELECT 
@@ -25,7 +25,7 @@ FROM
     linea_pedido lp ON (p.id_pedido = lp.fid_pedido);
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.png)
+![Ejemplo resultado](images/ejercicio2/result_2.png)
 # Consulta con RIGHT OUTER JOIN sql
 ```sql
 SELECT 
@@ -39,7 +39,7 @@ FROM
     linea_pedido lp ON (p.id_pedido = lp.fid_pedido);
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_3.png)
+![Ejemplo resultado](images/ejercicio2/result_3.png)
 # Consulta con AND JOINS DE MAS DE DOS TABLAS
 ```sql
 SELECT 
@@ -57,7 +57,7 @@ WHERE
         AND e.id_empleado = p.fid_vendedor;
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_4.png)
+![Ejemplo resultado](images/ejercicio2/result_4.png)
 # SUBCONSULTAS (SUBQUERIES)
 Si S devuelve un único resultado:
 ```sql
@@ -72,7 +72,7 @@ WHERE
             empleados);
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_5.png)
+![Ejemplo resultado](images/ejercicio2/result_5.png)
 #  SUBCONSULTAS (SUBQUERIES)
 Si S devuelve más de un resultado pero con un solo
 campo podemos hacer a su vez varias acciones
@@ -90,7 +90,7 @@ WHERE
             region = 'este');
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_6.png)
+![Ejemplo resultado](images/ejercicio2/result_6.png)
 ```sql
 SELECT 
     id_oficina, ciudad
@@ -104,7 +104,7 @@ WHERE
         GROUP BY id_oficina);
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_7.png)
+![Ejemplo resultado](images/ejercicio2/result_7.png)
 ```sql
 SELECT 
     id_oficina, ciudad
@@ -118,7 +118,7 @@ WHERE
         GROUP BY fid_oficina);
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_8.png)
+![Ejemplo resultado](images/ejercicio2/result_8.png)
 ```sql
 SELECT 
     id_empleado, nombre, fid_oficina
@@ -134,7 +134,7 @@ WHERE
                 AND e.fid_oficina = o.id_oficina);
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_9.png)
+![Ejemplo resultado](images/ejercicio2/result_9.png)
 ```sql
 SELECT 
     id_empleado, nombre, fid_oficina
@@ -150,7 +150,7 @@ WHERE
                 AND e.fid_oficina = o.id_oficina);
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_10.png)
+![Ejemplo resultado](images/ejercicio2/result_10.png)
 ## UPDATE con subconsultas:
 ```sql
 UPDATE empleados AS e,

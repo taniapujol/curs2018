@@ -10,7 +10,7 @@ FROM
     empleados AS s ON (s.id_empleado = e.fid_superior)
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_1.a)
+![Ejemplo resultado](images/ejercicio2/result_1.a)
 
 + b. Listado anterior INCLUYENDO aquellos empleados que no tengan
 superior.
@@ -23,7 +23,7 @@ FROM
     empleados AS s ON (s.id_empleado = e.fid_superior)
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_1.b.PNG)
+![Ejemplo resultado](images/ejercicio2/result_1.b.PNG)
 
 + c. Listado de empleados con información sobre su oficina, tengan o no.
 ```sql
@@ -35,7 +35,7 @@ FROM
     oficinas o ON (e.fid_oficina = o.id_oficina)
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_1.c)
+![Ejemplo resultado](images/ejercicio2/result_1.c)
 
 + d. Listado de empleados con información sobre su venta de importe más
 alto
@@ -50,7 +50,7 @@ group by e.nombre
 order by p.importe_total desc
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_1.d.PNG)
+![Ejemplo resultado](images/ejercicio2/result_1.d.PNG)
 
 + e. Listado de clientes cuyo número de pedidos sea superior a 2.
 ```sql
@@ -64,7 +64,7 @@ GROUP BY p.fid_cliente
 HAVING COUNT(p.fid_cliente) > 2;
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_1.e.PNG)
+![Ejemplo resultado](images/ejercicio2/result_1.e.PNG)
 
 2. Realizar las siguientes actualizaciones sobre la base de datos “empresa”:
 + a. Actualizar los salarios de nuestros empleados de tal forma que el salario
@@ -78,8 +78,8 @@ WHERE
     e.fid_oficina = o.id_oficina;
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.a.antes.png)
-![Ejemplo resultado](images/result_2.a.despues.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.a.antes.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.a.despues.png)
 
 + b. Poner a cero las ventas de los empleados de la oficina 12
 ```sql
@@ -92,8 +92,8 @@ WHERE
         AND o.id_oficina = 12;
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.a.antes.png)
-![Ejemplo resultado](images/result_2.b.despues.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.a.antes.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.b.despues.png)
 
 + c. Poner a cero el límite de crédito de los clientes asignados a empleados de la oficina 12.
 ```sql
@@ -108,8 +108,8 @@ WHERE
         AND e.fid_oficina = 12;
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.c.antes.png)
-![Ejemplo resultado](images/result_2.c.despues.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.c.antes.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.c.despues.png)
 
 + d. Borrar las líneas de pedido de los pedidos del cliente Jaime Llorens.
 ```sql
@@ -126,8 +126,8 @@ WHERE
         c.nombre = 'Jaime Llorens'); 
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.d.antes.png)
-![Ejemplo resultado](images/result_2.d.despues.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.d.antes.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.d.despues.png)
 
 + e. Aumentar un 5% el precio de todos los productos del fabricante ACI.
 ```sql
@@ -138,16 +138,16 @@ WHERE
     id_fabricante = 'aci';
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.e.antes.png)
-![Ejemplo resultado](images/result_2.e.despues.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.e.antes.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.e.despues.png)
 
 + f. Añadir una nueva oficina para la ciudad de Madrid, con numero de oficina 30, un objetivo de 600 y región centro.
 ```sql
 INSERT INTO oficinas VALUES(30,'Madrid','centro',NULL,600,NULL);
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.f.antes.png)
-![Ejemplo resultado](images/result_2.f.despues.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.f.antes.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.f.despues.png)
 
 + g. Cambiar los empleados de la oficina 21 a la oficina 30.
 ```sql
@@ -158,8 +158,8 @@ WHERE
     fid_oficina = 21;
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.g.antes.png)
-![Ejemplo resultado](images/result_2.g.despues.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.g.antes.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.g.despues.png)
 
 + h. Eliminar los pedidos del empleado 105.
 ```sql
@@ -178,8 +178,8 @@ WHERE
     p.fid_vendedor = 105;
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.h.antes.png)
-![Ejemplo resultado](images/result_2.h.despues.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.h.antes.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.h.despues.png)
 
 + i. Subir un 10% el salario de los empleados cuya oficina haya superado sus objetivos de venta.
 ```sql
@@ -192,13 +192,174 @@ WHERE
         AND o.objetivo < o.ventas;
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.i.antes.png)
-![Ejemplo resultado](images/result_2.i.despues.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.i.antes.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.i.despues.png)
 
 + j. Eliminar las oficinas que no tengan empleados.
 ```sql
-
+DELETE FROM oficinas 
+WHERE
+    id_oficina NOT IN (SELECT 
+        fid_oficina
+    FROM
+        empleados);
 ```
 Resultado<br> 
-![Ejemplo resultado](images/result_2.c.antes.png)
-![Ejemplo resultado](images/result_2.c.despues.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.j.antes.png)
+![Ejemplo resultado](images/ejercicio3/parte2/result_2.j.despues.png)
+
+3. Realizar las siguientes consultas con subconsultas sobre la base de datos “empresa”:
+
++a. Listar las oficinas donde el objetivo de vendas de la oficina exceda la suma de salarios de sus vendedores.
+```sql
+SELECT 
+    SUM(e.salario)AS salarioTotal, e.fid_oficina, o.id_oficina
+FROM
+    empleados e
+    inner join
+    oficinas o on e.fid_oficina= o.id_oficina
+    where o.objetivo> salario
+GROUP BY e.fid_oficina; 
+```
+Resultado<br> 
+![Ejemplo resultado](images/ejercicio3/parte3/imagen3.a.png)
+
++ b. Empeados con un salario igual o superior al objetivo de su oficina (con subconsultas o sin ellas)
+```sql
+SELECT 
+    e.id_empleado, e.nombre, e.salario, o.objetivo
+FROM
+    empleados e
+        INNER JOIN
+    oficinas o ON e.fid_oficina = o.id_oficina
+WHERE
+    e.salario >= o.objetivo;
+```
+Resultado<br> 
+![Ejemplo resultado](images/ejercicio3/parte3/imagen3.b.png)
+
++ c. Lista de los productos del fabricante ACI para los cuales las existencias superen las existencias del producto 41004 del mismo fabricante.
+
+```sql
+SELECT DISTINCT
+    *
+FROM
+    productos AS p
+        INNER JOIN
+    (SELECT DISTINCT
+        *
+    FROM
+        productos
+    WHERE
+        id_producto = 41004) AS pp ON p.id_fabricante = pp.id_fabricante
+WHERE
+    p.existencias > pp.existencias; 
+```
+Resultado<br>
+![Ejemplo resultado](images/ejercicio3/parte3/imagen3.c.png)
+
++ d. Empleados que NO trabajen en oficinas dirigidas por Ana Bustamante.
+```sql
+SELECT 
+    e.nombre, e.fid_oficina, (SELECT 
+            o.id_oficina
+        FROM
+            oficinas o,
+            empleados e
+        WHERE
+            e.fid_oficina = o.id_oficina
+                AND e.nombre = 'Ana Bustamante') as diricida_por_ana
+FROM
+    empleados e
+        INNER JOIN
+    oficinas o ON e.fid_oficina = o.id_oficina
+WHERE
+    e.fid_oficina NOT IN (SELECT 
+            o.id_oficina
+        FROM
+            oficinas o,
+            empleados e
+        WHERE
+            e.fid_oficina = o.id_oficina
+                AND e.nombre = 'Ana Bustamante');
+```
+Resultado <br>
+![Ejemplo resultado](images/ejercicio3/parte3/imagen3.d.png)
+
++ e. Lista de productos (con su descripción) para los cuales se ha recibido un pedido de importe 25.000 o más (considerando productos de cualquier fabricante).
+```sql
+SELECT 
+    p.id_producto, p.descripcion, lp.importe
+FROM
+    productos p
+        INNER JOIN
+    linea_pedido lp ON p.id_producto = lp.fid_producto
+WHERE
+    lp.importe >= 25000;
+
+```
+Resultado <br>
+![Ejemplo resultado](images/ejercicio3/parte3/imagen3.e.png)
+
++ f. Listar los nombres de los clientes que tienen asignado el representante Alvaro Jaumes (suponiendo que no pueden haber dos representantes con el mismo nombre).
+```sql
+SELECT 
+    c.nombre AS cliente, e.nombre AS representante
+FROM
+    empleados e
+        INNER JOIN
+    pedido p ON e.id_empleado = p.fid_vendedor
+        INNER JOIN
+    clientes c ON p.fid_cliente = c.id_cliente
+WHERE
+    e.nombre LIKE 'Alvaro Jaumes';
+```
+Resultado <br>
+![Ejemplo resultado](images/ejercicio3/parte3/imagen3.f.png)
+
++ g. Listar los empleados (id_empleado, nombre i fid_oficina) que trabajan en oficinas “buenas” (las que tienen ventas superiores a su objetivo).
+
+```sql
+SELECT 
+    e.id_empleado, e.nombre, e.fid_oficina
+FROM
+    empleados e
+        INNER JOIN
+    oficinas o ON e.fid_oficina = o.id_oficina
+WHERE
+    o.ventas > o.objetivo
+GROUP BY o.ventas;
+``` 
+Resultado <br>
+![Ejemplo resultado](images/ejercicio3/parte3/imagen3.g.png)
+
++ h. Listar los vendedores que no trabajen en oficinas dirigidas por el empleado 108.
+
+```sql
+SELECT 
+    e.nombre, e.fid_oficina, (SELECT 
+            o.id_oficina
+        FROM
+            oficinas o,
+            empleados e
+        WHERE
+            e.fid_oficina = o.id_oficina
+                AND e.nombre = 'Ana Bustamante') as diricida_por_ana
+FROM
+    empleados e
+        INNER JOIN
+    oficinas o ON e.fid_oficina = o.id_oficina
+WHERE
+    e.fid_oficina NOT IN (SELECT 
+            o.id_oficina
+        FROM
+            oficinas o,
+            empleados e
+        WHERE
+            e.fid_oficina = o.id_oficina
+                AND e.id_empleado = 108);
+```
+Resultado <br>
+![Ejemplo resultado](images/ejercicio3/parte3/imagen3.h.png)
+
++ i. Listar los clientes asignados a Ana Bustamante que no tienen ningun pedido superior a 50000.
