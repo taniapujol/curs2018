@@ -1,4 +1,5 @@
 <?php 
+// Conectamos con el servidor y la base de datos
 $host = "localhost";
 $user = "root";
 $bd = "aerolinia";
@@ -25,7 +26,7 @@ if ($mysqli->connect_errno) {
     <style>
         table{
             width:50%;
-            margin:auto;
+            margin:20px auto;
             border: 1px solid black;
         }
         table caption {
@@ -69,27 +70,6 @@ if ($mysqli->connect_errno) {
         </tr>
     <?php } ?>
 </table>
-    <h1>Select diferentes</h1>
-    <p> Select con count <p>
-    <?php 
-    $resultado = $mysqli->query("SELECT COUNT(*) FROM personal");
-    $fila = $resultado->fetch_assoc();
-        foreach ($fila as $value) {
-            printf ($fila);
-        }
-    ?>
 </body>
 </html>
-<?php
-// insertar un campo en nuestra bd.
-// $a=4;
-// while ($a <= 10) {
-//     $name = 'azafata'.$a;
-//     $query ="INSERT INTO personal VALUES($a,'$name','azafata')";
-//     // echo $query;
-//     if ($mysqli->query($query) === false) {
-//         printf('fallo al crear el insert'.'<br>');
-//     }
-//     $a++;
-// }
-?>
+
