@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Empresa php-sql</title>
+    <link href="https://fonts.googleapis.com/css?family=Kavivanar" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 
 <body>
@@ -23,13 +24,16 @@
             <br> e. Modificad la fecha de todos los contratos por la fecha actual
         </p>
     </div>
-    <div class="container">
-        <h3 style="margin:10% 0 10%, text-align:centre;">RESULTADOS</h3>
+    <div class="container-fluid">
+        
         <div class="container">
             <div class="row">
                 <?php include('php/printcards.php');?>
             </div>
-            <?php include('php/printresult.php');?>
+            <h3>RESULTADOS</h3>
+            <div class="row">
+                <?php include('php/printresult.php');?>
+            </div>
         </div>
     </div>
     <?php $mysqli->close(); ?>

@@ -5,7 +5,7 @@
         if ($ficheros != "." && $ficheros != ".." && substr($ficheros,-4)=='.php') { 
             $fichero = explode('.', $ficheros);    
         ?>
-        <div id="<?=$fichero[0]?>"> 
+        <div id="<?=$fichero[0]?>" class="box"> 
         <?php  include("consultas/".$fichero[0].".php");?>
         </div> 
     <?php } ?>

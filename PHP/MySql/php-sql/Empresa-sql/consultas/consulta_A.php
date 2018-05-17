@@ -4,7 +4,7 @@
     $filas = $result-> fetch_all();
     foreach ($filas as $fila) {
         foreach ($fila as $key => $value ){
-                echo $value;
+            echo $value;
         }  
     }
     

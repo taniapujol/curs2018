@@ -1,7 +1,4 @@
-<section>
-    
 <table class="table">
-    <caption><?=$bd.' --- TABLA : empleados'?></caption>
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -11,18 +8,19 @@
         </tr>
     <thead>
     <tbody>
-
 <?php
-    $sql="Select nombre, fecha_contrato from empleados order by fecha_contrato desc;";
-    $result = $mysqli->query($sql);
-    $filas = $result-> fetch_all();
-    foreach ($filas as $fila) {?>
+$count=1;
+$sql="Select id_empleado, nombre, fecha_contrato from empleados order by fecha_contrato desc;";
+$result = $mysqli->query($sql);
+$filas = $result-> fetch_all();
+foreach ($filas as $fila) {?>
         <tr>
-            <th scope="row"><?=$fila?></th>
+            <th scope="row"><?=$count?></th>
         <?php foreach ($fila as $key => $value ){?>
             <td><?=$value;?></td>   
-        <?php } ?>
+<?php } 
+$count++?>
         </tr>
-    <?php }?>
+<?php }?>
     </tbody>
-</section>
+</table>
