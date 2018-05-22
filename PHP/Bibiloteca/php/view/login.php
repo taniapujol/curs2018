@@ -1,0 +1,16 @@
+<div class="container">
+    <form class="form-signin">
+        <i class="material-icons" id="logo">account_box</i>
+        <br>
+        <label for="inputEmail" class="sr-only">Dni</label>
+        <input type="text" id="inputEmail" name="dni" class="form-control" placeholder="DNI" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="">
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-warning btn-block" type="submit" name="SignIn">Sign in</button>
+    </form>
+</div>
