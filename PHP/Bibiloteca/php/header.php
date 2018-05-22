@@ -6,6 +6,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <?php if (isset($_SESSION['usuario'])) { ?>
         <form>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -21,7 +22,7 @@
                 </li>
             </ul>
         </form>
-        <?php if (isset($_SESSION['usuario'])) { ?>
+        
             <form class="form-inline my-2 my-lg-0">
                 <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" name="SingOut">Sing Out</button>
             </form>
