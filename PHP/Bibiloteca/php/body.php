@@ -14,14 +14,14 @@
             }
         }
     }  else {
-        include('php/view/home.php');
+        include('php/Pages/home.php');
         if (isset($_REQUEST['seccio'])) {
             switch ($_REQUEST['seccio']) {
                 case 'login':
-                include('php/view/login.php');
+                include('php/Pages/login.php');
                 break;
             case 'registre':
-                include('php/view/registre.php');
+                include('php/Pages/registre.php');
                 break;
            }
         }

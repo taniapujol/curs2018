@@ -10,40 +10,51 @@
 function checkUser ($dni,$password)
 {
     // incluimos la connecion a la table usuarios
-    include('php/utils/usuarios.php');
+    include('php/Util/confing.php');
+    echo('connecion establecida');
+    $sql = "SELECT nombre, tipo
+            FROM socio 
+            WHERE DNI='$dni' AND password='$password'";
+    $users = $con->query($sql);
+    $nfilas = mysqli_num_rows($users);
+    mysqli_close($con);
     // recoremos la array de usuarios
     if ($nfilas >0) {
         $fila = $users->fetch_assoc();
         $_SESSION['usuario']['tipo'] = $_SESSION['tipo'] = $fila['tipo'];
-        $_SESSION['usuario']['username'] = $usuario;
+        $_SESSION['usuario']['nombre'] = $fila['nombre'];
+        echo('seccion iniciada');
         return true;
     } 
     return false;
 }
 // La función 'newUser()' chequea los usuarios y nos devuelve el tipo de usuario que es   
-function newUser ()
+function newUser ($newUser)
 {
-    if (isset($_POST['loginNew'])) {
-        // incluimos la connecion a la table usuarios
-        include('php/utils/connect.php');
-        $user=$_post['user'];
-        $password=md5($_POST['password']);
-        $nombre=$_POST['nombre'];
-        $apellidos=$_POST['apellidos'];
-        $direccion=$_POST['direccion'];
-        $emil=$_POST['email'];
-        $telf=$_POST['telefono'];
-        $tipo='usuario';        
-        $sql = "INSERT INTO `fullsport`.`usuarios` (`user`, `password`, `nombre`, `apellidos`, `direccion`, `email`, `telefono`, `tipo`) VALUES ('$user', '$password', '$nombre', '$apellidos', '$direccion', '$email', '$telefono', 'usuario');";
-        $new= $con->query($sql);
-        if($new){
-            header("Location:php/view/body/form-login.php");
-        } else {
-            echo 'error al introducir datos';    
+    // incluimos la connecion a la table usuarios
+    include('php/Util/confing.php');
+    $dni=$newUser['dni'];
+    $password=$newUser['password'];
+    $nombre=$newUser['nombre'];
+    $apellidos=$newUser['apellidos'];
+    $direccion=$newUser['direccion'];
+    $email=$newUser['email'];
+    $tipo='usuario';        
+    $sql = "INSERT INTO `socio` (`DNI`, `nombre`, `apellidos`, `direccion`, `email`, `tipo`,`password`) 
+            VALUES (
+                '$dni', 
+                '$nombre', 
+                '$apellidos', 
+                '$direccion', 
+                '$email', 
+                '$tipo',
+                '$password')";
+    $new= $con->query($sql);
+        if(!$new){
+            echo 'error al introducir datos'; 
         };
         mysqli_close($con);
     return false;
-    }
 }
 
 // fin funciones

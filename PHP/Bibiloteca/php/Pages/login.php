@@ -1,5 +1,17 @@
+<?php 
+    if (isset($_POST['SingIn'])) {
+        $user=$_POST['dni'];
+        $pass=md5($_POST['password']);
+        $checkUser = checkUser ($user,$password);
+        if($checkUser){
+            $echo='Usuario registrado';
+            include('php/Pages/biblioteca.php');
+        } else {
+            $echo ='Usuario no registrado';
+        }
+    } else { ?>
 <div class="container">
-    <form class="form-signin">
+    <form class="form-signin" method="post">
         <i class="material-icons" id="logo">account_box</i>
         <br>
         <label for="inputEmail" class="sr-only">Dni</label>
@@ -14,3 +26,6 @@
         <button class="btn btn-lg btn-warning btn-block" type="submit" name="SignIn">Sign in</button>
     </form>
 </div>
+ <?php 
+} 
+?>
