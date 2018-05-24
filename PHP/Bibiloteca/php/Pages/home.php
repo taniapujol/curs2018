@@ -1,5 +1,17 @@
+<?php
+    if(isset($_POST['seccio'])){
+        switch ($_POST['seccio']) {
+            case 'login':
+            include("php/Pages/login.php");
+            break;
+        case 'registre':
+            include("php/Pages/registre.php");
+            break;
+        }
+    } else {
+?>
 <div class="container">
-    <form>
+    <form  method="post">
         <div class="row">
             <div class="col-sm">
                 <div class="card" style="width: 18rem;">
@@ -20,3 +32,4 @@
         </div>
     </form>
 </div>
+<?php } ?>

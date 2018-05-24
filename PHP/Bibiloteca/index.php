@@ -1,4 +1,4 @@
-<?php session_start() ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +19,13 @@
     <?php include_once('php/util/funciones.php');?>
 </head>
 <body>
-    <?php 
-        include('php/header.php');
-        include('php/body.php');
-        include('php/footer.php');
+    <?php
+        // incluimos el archivo de configuracion
+        include ('php/Util/cfg.php');
+        // incluimos la cabecera, cuerpo y pie de la web
+        include ('php/header.php');
+        include ('php/body.php');
+        include ('php/footer.php');
     ?>
     <!-- link bootstrap js -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

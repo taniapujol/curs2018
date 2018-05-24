@@ -4,55 +4,169 @@ body {
   width: 100%;
   height: 100vh;
   font-family: 'Yatra One', cursive;
-  
+  box-sizing: border-box;
+  margin: 0;
+   padding: 0;
+    
+}
+header {
+    background-color: black;
 }
 
-.container, .container-fluid {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
+header>div {
+    margin: 0 20px !important;
 }
-.container-fluid{
-width: 100%;
-  height: 100vh;
-  background: url(../img/bg.jpg)!important;
-  background-repeat: no-repeat;
-  background-size: cover;
+
+.logo {
+    font-family: 'Jua', sans-serif !important;
+    font-size: 3em !important;
+    color: white !important;
 }
-#logo{
-  font-size: 150px;
-  text-align: center;
-  color: gray!important;
+
+/* css para los botones de la navegacion */
+
+.navbarbut {
+    font-family: Prime;
+    text-align: center;
+    text-transform: uppercase;
+    padding: .5em 0.8em;
+    position: relative;
+    font-size: 20px;
+    border: none;
+    color: white;
+    background: black;
 }
-.form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
+
+.navbarbut::before,
+.navbarbut::after {
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    content: '';
+    transition: all 0.35s ease;
+    opacity: 0;
 }
-.form-signin .checkbox {
-  font-weight: 400;
+
+.navbarbut::before {
+    right: 0;
+    top: 0;
+    border-right: 3px solid greenyellow;
+    border-top: 3px solid greenyellow;
+    transform: all 0.35s ease;
+    transform: translate(-100%, 50%);
 }
-.form-signin .form-control {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
+
+.navbarbut::after {
+    left: 0;
+    bottom: 0;
+    border-left: 3px solid greenyellow;
+    border-bottom: 3px solid greenyellow;
+    transform: all 0.35s ease;
+    transform: translate(-100%, 50%);
 }
-.form-signin .form-control:focus {
-  z-index: 2;
+
+.navbarbut:hover::before,
+.navbarbut:hover::after {
+    transform: translate(0%, 0%);
+    opacity: 1;
 }
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+
+/* css para el formulario 'login'*/
+
+.form-login, .form-subida {
+    width: 100%;
+    height: 100%;
+    margin: 5% auto;
+    box-sizing: border-box;
+    background-color: white !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+
+.form-login .eform {
+    width: 415px;
+    height: auto!important;
+    background-color: white !important;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-login .eform input, .form-subida .eform input {
+    display: block;
+    margin: 10px;
+    text-align: center;
+}
+.form-login #enviar,
+.form-subida .eforn input[type="submit"],
+.form-subida .eform input[type="submit"] {
+    width: 95%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 2em;
+    padding: 10px;
+    background-color: black;
+    color:white;
+    text-align: center;
+}
+.form-subida .eforn input[type="radio"]{ display: inline;}
+.radios {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    align-content: space-between;
+}
+/* css del body home */
+
+.inicio {
+    width: 50%;
+    height: 50%;
+    margin: 10% auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.inicio form {
+    width: 100%;
+    height: 100%;
+    font-family: 'Jua', sans-serif;
+    padding: 30px;
+}
+
+.inicio form button {
+    widows: 100%;
+    font-size: 2em;
+    border-radius: 50%;
+}
+.jumbotron{
+    background: white !important;
+    color: black !important;
+}
+.content-box{
+    width: 85%;
+    height: auto;
+    margin: 50px auto;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    align-content: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 5px gray;
+}
+.content-box img {
+    width: 400px;
+    height: 400px;
+}
+.content-box p {
+    width: 400px;
+    height: 400px;
 }
