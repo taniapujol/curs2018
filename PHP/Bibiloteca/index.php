@@ -16,7 +16,7 @@
     <!-- link a css propios -->
     <link rel="stylesheet" href="css/signin.css">
     <!-- Carga de funciones php -->
-    <?php include_once('php/util/funciones.php');?>
+    <?php include('php/util/funciones.php');?>
 </head>
 <body>
     <?php

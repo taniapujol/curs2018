@@ -10,9 +10,11 @@
 // La funcion 'initCfg()' inicializamos todas las variables que necesito
 function initCfg()
 {   
-    $cfg['username']    = "";
-	$cfg['pass']        = "";
-    $_SESSION['usuario']['tipo'] = $cfg['tipo'] =  "none";
+    $cfg['nombre']  = "";
+	$cfg['pass']    = "";
+    $cfg['tipo']    = "none";
+    // $_SESSION['usuario']['tipo'] = "none";
+    return $cfg;
 }
 // La función 'checkUser( @param:usuario y contraseña )' chequea los usuarios y nos devuelve el tipo de usuario que es   
 function checkUser ($dni,$password)
@@ -82,16 +84,18 @@ function getFiles($dir){
 // la Funcion printContent(@param directorio de texto y directorio de image) nos pinta la visualizacion de los diferentes deportes
 function printContent ($directorio)
 {
-    $files = getFiles($directorio);     
-    foreach ($files as $file) {         
-        $filename = preg_replace('/\\.[^.\\s]{3,4}$/', '', $file);
-        echo "<div class=\"card\" style=\"width: 18rem;\">";
-        echo "<img class=\"card-img-top\" src=\"obras/$directorio/$filename.jpg\">";
-        echo "<div class=\"card-body\">";
-        echo "<h5 class=\"card-title\">".$filename."</h5>";
-        echo "</div>";
-        echo "</div>";
-    } 
+    echo "<script src=\"js/ajax_registre\"></script>";
+    
+    // $files = getFiles($directorio);     
+    // foreach ($files as $file) {         
+    //     $filename = preg_replace('/\\.[^.\\s]{3,4}$/', '', $file);
+    //     echo "<div class=\"card\" style=\"width: 18rem;\">";
+    //     echo "<img class=\"card-img-top\" src=\"$directorio/$file\">";
+    //     echo "<div class=\"card-body\">";
+    //     echo "<h5 class=\"card-title\">".$filename."</h5>";
+    //     echo "</div>";
+    //     echo "</div>";
+    // } 
 }
 // fin funciones
 ?>
