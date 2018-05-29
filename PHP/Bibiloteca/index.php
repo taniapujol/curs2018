@@ -31,5 +31,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <!-- link a javascripts propios -->
+    <!-- <script src="js/ajax_registre.js"></script> -->
+    <script src="js/ajax_select.js"></script>
+    <script src="js/pintaCard.js"></script>
 </body>
 </html>

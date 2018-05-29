@@ -5,9 +5,11 @@ if (($_SESSION['usuario']['tipo'] != 'none')&& isset($_POST['seccio'])){
     foreach ($botones as $boton) {
         switch ($_POST['seccio']) {
             case $boton:
-            $dir="obras/".$boton.'/';
-            // Pintamos el contenido de las secciones
-            printContent($dir);
+                echo "<div class=\"jumbotron text-uppercase\" style=\"background-color:#ccc!important;\">";
+                echo "<h1 class=\"display-4 text-center\">".$boton."</h1>";
+                echo "</div>";
+                // Pintamos el contenido de las secciones
+                printContent($boton);
         }
     }
     // switch per el enllaços fitxes.
