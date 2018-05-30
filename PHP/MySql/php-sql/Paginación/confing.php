@@ -1,7 +1,7 @@
 <?php // Conectamos con el servidor y la base de datos
 $host = "localhost";
 $user = "root";
-$bd = "fullsport";
+$bd = "vuelos";
 $pass = "tania1979";
 // array asociativa para la conneccion
 $cfg = array(

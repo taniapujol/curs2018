@@ -94,13 +94,16 @@ function printContent ($directorio)
                     o.caratula,
                     a.nombre AS autor,
                     o.categoria,
-                    SELECT count(c.id_obra) FROM copia c, obra o where c.id_obra=o.id_obra group by id_obra AS copia
+                    count(c.id_copia) as copia 
                 FROM
                     obra o,
                     autor a,
+                    copia c
                 WHERE
                     o.id_autor = a.idautor
-                AND o.categoria =  '".$categoria."'";
+                and c.id_obra = o.id_obra
+                AND o.categoria =  '".$directorio."'
+                group by o.id_obra;";
         include('php/Util/confing.php');
         if (!$con) {
             die('Could not connect: ' . mysqli_error($con));
@@ -110,18 +113,7 @@ function printContent ($directorio)
         echo "<div class=\"container\">";
             echo "<div class=\"row\">";
             while ($row=mysqli_fetch_array($result)){ 
-                echo "<div class=\"col-sm\">";
-                    echo "<div class=\"card\" style=\"width: 18rem;\">";
-                        echo "<img class=\"card-img-top\" src=\"obras/".$categoria."/".$row['caratula']."\"". "alt=\"Card image cap\">";
-                        echo "<div class=\"card-body\">";
-                            echo "<h3 class=\"card-title text-uppercase text-truncate\">".$row['nombre']."</h3>";
-                            echo "<h5 class=\"card-text\">".$row['autor']."</h5>";
-                            echo "<a href=\"#\" class=\"btn btn-dark btn-block\" onclick=\"Ver(".$row['id_obra'].")\">VER</a>";
-                            echo "<hr>";
-                            echo "<h6 class=\"text-center\">Ejemplares disponibles <span class=\"badge badge-secondary text-right\">New</span></h6>";
-                        echo "</div>";
-                    echo "</div>";
-                echo "</div>";
+                include('php/Util/cardBox.php');
             }
             echo "</div>";
         echo "</div>" ;  
