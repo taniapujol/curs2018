@@ -34,6 +34,6 @@
     <!-- link a javascripts propios -->
     <!-- <script src="js/ajax_registre.js"></script> -->
     <script src="js/ajax_select.js"></script>
-    <script src="js/pintaCard.js"></script>
+    <script src="js/ajax_modal.js"></script>
 </body>
 </html>

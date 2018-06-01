@@ -88,22 +88,34 @@ function printContent ($directorio)
     // verificamos que existe envio POST
     if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
         $sql = "SELECT 
-                    o.id_obra,
-                    o.nombre,
-                    o.resumen,
-                    o.caratula,
-                    a.nombre AS autor,
-                    o.categoria,
-                    count(c.id_copia) as copia 
+                    t.no_disp,
+                    t2.si_disp,
+                    IF(t.no_disp = t2.si_disp,
+                        0,
+                        t2.si_disp) AS copia,
+                    t2.nombre AS nombre,
+                    t2.id_obra AS id,
+                    t2.caratula AS caratula,
+                    a.nombre AS autor
                 FROM
-                    obra o,
-                    autor a,
-                    copia c
+                    (SELECT 
+                        copia.id_obra, COUNT(copia.id_obra) AS no_disp
+                    FROM
+                        prestamo
+                    INNER JOIN copia ON copia.id_copia = prestamo.id_copia
+                    WHERE
+                        fecha_devuelto IS NULL
+                    GROUP BY copia.id_obra) AS t
+                        RIGHT JOIN
+                    (SELECT 
+                        COUNT(*) AS si_disp, obra.*
+                    FROM
+                        copia
+                    RIGHT OUTER JOIN obra ON obra.id_obra = copia.id_obra
+                    GROUP BY id_obra) AS t2 ON t.id_obra = t2.id_obra
+                    INNER JOIN autor a ON id_autor = a.idautor
                 WHERE
-                    o.id_autor = a.idautor
-                and c.id_obra = o.id_obra
-                AND o.categoria =  '".$directorio."'
-                group by o.id_obra;";
+                    t2.categoria = '$directorio'";
         include('php/Util/confing.php');
         if (!$con) {
             die('Could not connect: ' . mysqli_error($con));
