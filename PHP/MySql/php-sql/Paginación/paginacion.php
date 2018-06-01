@@ -16,8 +16,8 @@ $pag=1;
 $total_pag= ceil($total_items/$num_items);
 
 if(isset($_GET['view'])){
-    $pre_view = $_GET['view']-1;
-    $next_view = $_GET['view']+1;
+    $pre_view = ($_GET['view']-1<0) ?   $_GET['view']-1 : 0;
+    $next_view = ($_GET['view']+1<$num_items) ? $_GET['view']+1 : $num_items-1;
 } else {
     $pre_view = $_GET['view'] = 0;
     $next_view = $_GET['view'] = 0;
