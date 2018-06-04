@@ -16,8 +16,8 @@ switch ($_REQUEST['section']) {
         <?php break;
     case 'ver':
         $id=$_REQUEST['id'];
-        include('php/Util/confing.php');
-        $sql="SELECT * FROM obra WHERE id=$id";
+        include('confing.php');
+        $sql="SELECT * FROM obra WHERE id_obra=$id";
         if (!$con) {
             die('Could not connect: ' . mysqli_error($con));
         }        
@@ -25,18 +25,20 @@ switch ($_REQUEST['section']) {
         while ($row=mysqli_fetch_array($result)){?>
             <div class="row">
             <div class="col-sm-9">
-                Level 1: .col-sm-9
+                <h3><?=$row['nombre']?></h3>
                 <div class="row">
                 <div class="col-8 col-sm-6">
-                    Level 2: .col-8 .col-sm-6
+                    <img src="obras/<?=$row['categoria']?>/<?=$row['caratula']?>">
                 </div>
                 <div class="col-4 col-sm-6">
-                    Level 2: .col-4 .col-sm-6
+                    <p><?=$row['resumen']?></p>
                 </div>
                 </div>
             </div>
         </div>
-        <?php break;
+        <?php 
+        }
+        break;
     case 'eliminar':
         echo 'eliminar item';
         break;
