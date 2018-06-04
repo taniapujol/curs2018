@@ -10,7 +10,7 @@ if (($_SESSION['usuario']['tipo'] != 'none')&& isset($_POST['seccio'])){
                 echo "</div>";
                 // Pintamos el contenido de las secciones
                 printContent($boton);
-                include("php/Util/modal.php");
+                include("php/Pages/modal.php");
         }
     }
     // switch per el enllaços fitxes.
