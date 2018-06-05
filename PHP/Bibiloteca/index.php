@@ -33,7 +33,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <!-- link a javascripts propios -->
     <!-- <script src="js/ajax_registre.js"></script> -->
-    <script src="js/ajax_select.js"></script>
+    <!-- <script src="js/ajax_select.js"></script> -->
     <script src="js/ajax_modal.js"></script>
 </body>
 </html>

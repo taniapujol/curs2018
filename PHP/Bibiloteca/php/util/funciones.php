@@ -122,7 +122,7 @@ function printContent ($directorio)
         }        
         $result = mysqli_query($con,$sql);
    
-        echo "<div class=\"container\">";
+        echo "<div class=\"container-fluid\">";
             echo "<div class=\"row\">";
             while ($row=mysqli_fetch_array($result)){ 
                 include('php/Util/cardBox.php');

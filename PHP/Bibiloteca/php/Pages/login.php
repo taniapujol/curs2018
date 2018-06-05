@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container shadow-lg p-3 mb-5 bg-white rounded">
     <form class="form-signin" method="post">
-        <i class="material-icons" id="logo">account_box</i>
+        <h3>Login</h3>
         <br>
         <label for="inputEmail" class="sr-only">Dni</label>
         <input type="text" id="inputEmail" name="dni" class="form-control" placeholder="DNI" required="" autofocus="">

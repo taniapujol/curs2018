@@ -4,7 +4,7 @@
             <h3 class="text-light text-uppercase">
                 <?php 
                 if(isset($_POST['login'])){
-                    echo $_SESSION['usuario']['tipo'];
+                    // echo $_SESSION['usuario']['tipo'];
                     if ($_POST['login']=='true' && $_SESSION['usuario']['tipo'] != "none") {
                 
                     echo 'hi !!! '.$_SESSION['usuario']['nombre'];

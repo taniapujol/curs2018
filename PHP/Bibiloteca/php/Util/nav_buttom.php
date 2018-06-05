@@ -7,7 +7,7 @@
                 // El user tipo admin tiene los botones todos activados
                 case 'admin': ?>
                     <!-- hacemos un for para crear la barra de navegacion de los diferentes obras -->
-                    <?php $botones = getButton('deportes');
+                    <?php $botones = getButton('obras');
                         foreach ($botones as $key => $boton) { ?>
                             <li class="nav-item">
                                 <button 
