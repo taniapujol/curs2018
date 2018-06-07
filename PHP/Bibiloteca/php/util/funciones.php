@@ -89,10 +89,13 @@ function printContent ($directorio)
     if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
         $sql = "SELECT 
                     t.no_disp,
-                    t2.si_disp,
-                    IF(t.no_disp = t2.si_disp,
+                    t2.num_copias,
+                    IF(t.no_disp = t2.num_copias,
                         0,
-                        t2.si_disp-t.no_disp) AS copia,
+                        IF(t.no_disp is null,
+                            t2.num_copias,
+                            t2.num_copias-t.no_disp)
+                    ) AS disponibles,
                     t2.nombre AS nombre,
                     t2.id_obra AS id,
                     t2.caratula AS caratula,
@@ -108,7 +111,7 @@ function printContent ($directorio)
                     GROUP BY copia.id_obra) AS t
                         RIGHT JOIN
                     (SELECT 
-                        COUNT(*) AS si_disp, obra.*
+                        COUNT(*) AS num_copias, obra.*
                     FROM
                         copia
                     RIGHT OUTER JOIN obra ON obra.id_obra = copia.id_obra
