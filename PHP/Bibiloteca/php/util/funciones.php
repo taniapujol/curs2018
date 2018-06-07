@@ -92,7 +92,7 @@ function printContent ($directorio)
                     t2.si_disp,
                     IF(t.no_disp = t2.si_disp,
                         0,
-                        t2.si_disp) AS copia,
+                        t2.si_disp-t.no_disp) AS copia,
                     t2.nombre AS nombre,
                     t2.id_obra AS id,
                     t2.caratula AS caratula,

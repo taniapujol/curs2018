@@ -17,7 +17,7 @@
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="img/login.jpg" width="246" height="205">
                     <div class="card-body">
-                        <button class"btn btn-warning" type="submit" name="seccio" value="SingIn">SING IN</button>
+                        <button class"btn btn-dark btn-block" type="submit" name="seccio" value="SingIn">SING IN</button>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="img/registro.jpg" width="246" height="205">
                     <div class="card-body">
-                        <button class"btn btn-warning" type="submit" name="seccio" value="registre">REGISTRE</button>
+                        <button class"btn btn-dark btn-block" type="submit" name="seccio" value="registre">REGISTRE</button>
                     </div>
                 </div>
             </div>

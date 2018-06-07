@@ -2,14 +2,15 @@
 
 switch ($_REQUEST['section']) {
     
-    case 'editar':?>
+    case 'devolver':
+        $id=$_REQUEST['id'];?>
         <!-- Cuerpo de modal cuando la opcion es editar -->
         <form id="Modificar">
-        <input type="date" class="form-control" id="devolucion" placeholder="fecha de devolucion">
+        <input type="hidden" class="from-control" id="id_prestamos" name="id_prestamos" value="<?=$id?>">
+        <input type="date" class="form-control" id="devolucion" name="devolucion" placeholder="fecha de devolucion">
         </form>
         <?php break;
-    case 'ver':
-        // cuerpo de modal cuando la opcion es ver   
+    case 'ver':   
         $id=$_REQUEST['id'];
         include('confing.php');
         $sql="SELECT * FROM obra WHERE id_obra=$id";
@@ -18,6 +19,7 @@ switch ($_REQUEST['section']) {
         }        
         $result = mysqli_query($con,$sql);
         while ($row=mysqli_fetch_array($result)){?>
+            <!-- cuerpo de modal cuando la opcion es ver -->
             <div class="row">
                 <div class="col-sm">
                     <h3 class="text-uppercase">Titulo : <?=$row['nombre']?></h3>
@@ -44,12 +46,21 @@ switch ($_REQUEST['section']) {
                     </div>
                     </div>
                 </div>
-        </div>
+            </div>
         <?php 
         }
         break;
     case 'eliminar':
-        echo 'eliminar item';
+        $id=$_REQUEST['id'];
+        include('confing.php');
+        $sql="SELECT nombre, categoria FROM obra WHERE id_obra=$id";
+        if (!$con) {die('Could not connect: ' . mysqli_error($con));}        
+        $result = mysqli_query($con,$sql);
+        $row=mysqli_fetch_array($result);
+        echo '<p>Se va eliminar <strong>'.$row['nombre'].'</strong> de la categoria '. $row['categoria'].'</p>';
+        break;
+    case 'editar':
+        echo 'editar ficha tecnica';
         break;
     }
 

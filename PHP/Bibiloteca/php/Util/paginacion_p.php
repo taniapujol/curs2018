@@ -69,7 +69,12 @@ if(isset($_GET['view'])){
                             <td><?=$row['fecha_inicio']?></td>
                             <td><?=$row['fecha_top']?></td>
                             <td class="font-weight-bold text-danger"><?=$row['fecha_devuelto']?></td>
-                            <td><button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['prestamo']?>" data-seccion="editar">EDITAR</button></td>
+                            <td>
+                                <?php 
+                                if ($row['fecha_devuelto']==null || $row['fecha_devuelto']==' ') {?>
+                                    <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['prestamo']?>" data-seccion="devolver">DEVOLVER</button>  
+                                <?php } ?>
+                                </td>
                         <?php } ?>
                         </tr>
                     </tbody>

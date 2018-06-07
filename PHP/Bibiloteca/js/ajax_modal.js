@@ -1,4 +1,38 @@
-$(document).ready(function () {
+function Devolver() {
+    var id = $('#id_prestamos').val();
+    var devolucion = $('#devolucion').val();
+    console.log(id+' - '+devolucion);
+    var formData = {'id':id,'devolucion':devolucion};
+    console.log(formData);
+    $.ajax({
+        type: "post",
+        url: "php/servicios/devolucion.php",
+        data: formData,
+       /* processData: false,  // tell jQuery not to process the data
+        contentType: false,  // tell jQuery not to set contentType*/
+        beforeSend: function () {
+            $('.submitBtn').attr("disabled","disabled");
+            $('.modal-body').css('opacity', '.5');
+        },
+        success:function(msg){
+            alert(msg);
+            if(msg == 'ok')
+            {window.location.reload();
+            $("#myModal").modal('hide');
+            
+            }else{
+                alert(msg);
+            }
+            $('.submitBtn').removeAttr("disabled");
+            $('.modal-body').css('opacity', '');
+        }
+    // fin ajax
+    });
+}
+function Eliminar() {
+    
+}
+$(document).ready(function () {   
     $('#Modal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) 
         var content = button.data('envio')
@@ -11,25 +45,18 @@ $(document).ready(function () {
             modal.find('.modal-body').html(data)
         }); 
         if (sec=='editar') {
-            modal.find('.modal-footer').append('<button type="button" class="btn btn-secondary">Modificar</button>')
+            modal.find('.modal-footer').html('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="submit" class="btn btn-secondary">Modificar</button>')
         }
+        if (sec=='devolver') {
+            modal.find('.modal-footer').html('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="button" class="btn btn-primary submitBTN" id="devolver" onclick="Devolver()">Devolver</button>')
+        }
+        if (sec=='ver') {
+            modal.find('.modal-footer').html('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>')
+        }
+        if (sec=='eliminar') {
+            modal.find('.modal-footer').html('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="button" class="btn btn-primary submitBTN" id="devolver" onclick="Eliminar()">Eliminar</button>')
+        }
+    // fin del modal show
     });
-    $("#Modificar").submit(function(event){
-        event.preventDefault();
-        var Data = $('#devolucion').value();
-        console.log(Data);
-        
-        $.ajax({
-            url: 'php/servivios/prestamo.php',
-            type: 'POST',
-            data: Data,
-          success : function(result) {
-                 
-            },
-          error : function(result) {
-          
-            }  
-        });
-      });
-    
+// fin del document.ready
 });

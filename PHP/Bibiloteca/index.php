@@ -14,7 +14,7 @@
     <!-- link bootstrap css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <!-- link a css propios -->
-    <link rel="stylesheet" href="css/signin.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- Carga de funciones php -->
     <?php include('php/util/funciones.php');?>
 </head>

@@ -12,12 +12,12 @@
             switch ($_SESSION['usuario']['tipo']) {
                 // El user tipo admin tiene los botones todos activados
                 case 'admin': ?>
-                    <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="ver">VER</button>
-                    <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="eliminar">ELIMINAR</button>
-                    <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="editar">EDITAR</button>
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="ver">VER</button>
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="eliminar"><i class="material-icons">delete_outline</i></button>
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="editar"><i class="material-icons">create</i></button>
                 <?php break;
                 case 'usuario': ?>
-                    <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="ver">VER</button>
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="ver">VER</button>
                 <?php break; 
             }?>
             <h6 class="text-center">Ejemplares disponibles
