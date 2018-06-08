@@ -9,19 +9,53 @@ body {
     padding: 0;
 }
 header {
-    background-color: black;
+    /* background-color: black; */
+    background-color: #05054C!important;
+    /* background-image: url('../img/bg.jpg')!important; */
+    background-position: 0 15%;
 }
 
 header>div {
     margin: 0 20px !important;
 }
-
+/* css de material-icons */
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 32px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+}
 .logo {
     font-family: 'Jua', sans-serif !important;
-    font-size: 3em !important;
-    color: white !important;
+    font-size: 4em !important;
+    color: blue !important;
 }
-
+.jumbotron{
+    background: linear-gradient(#05054C,white)!important;
+    color: white;
+    border-radius: 0;
+}
+.disponibles{
+    background-color: #05054C;
+    color: white;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; */
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.disponibles span{
+    margin-left: 5px;
+}
 /* css para los botones de la navegacion */
 
 .navbarbut {
@@ -33,7 +67,7 @@ header>div {
     font-size: 20px;
     border: none;
     color: white;
-    background: black;
+    background: transparent!important;
 }
 
 .navbarbut::before,
@@ -49,8 +83,8 @@ header>div {
 .navbarbut::before {
     right: 0;
     top: 0;
-    border-right: 3px solid greenyellow;
-    border-top: 3px solid greenyellow;
+    border-right: 3px solid cornflowerblue!important;
+    border-top: 3px solid cornflowerblue!important;
     transform: all 0.35s ease;
     transform: translate(-100%, 50%);
 }
@@ -58,8 +92,8 @@ header>div {
 .navbarbut::after {
     left: 0;
     bottom: 0;
-    border-left: 3px solid greenyellow;
-    border-bottom: 3px solid greenyellow;
+    border-left: 3px solid cornflowerblue!important;
+    border-bottom: 3px solid cornflowerblue!important;
     transform: all 0.35s ease;
     transform: translate(-100%, 50%);
 }
@@ -69,8 +103,17 @@ header>div {
     transform: translate(0%, 0%);
     opacity: 1;
 }
-
+/* css para las tablas */
+.thead{
+    background-color: rgb(7, 7, 206);
+    color:white;
+}
 /* css para el formulario 'login'*/
+.form-signin h3{
+    background-color:cornflowerblue; 
+    border-radius:4px; 
+    padding:5px;
+}
 .container{
     width: 400px;
     position: absolute;
@@ -83,7 +126,7 @@ header>div {
     height: 100%;
     margin: 5% auto;
     box-sizing: border-box;
-    background-color: white !important;
+    background-color: cornflowerblue !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +135,7 @@ header>div {
 .form-login .eform {
     width: 415px;
     height: auto!important;
-    background-color: white !important;
+    background-color: cornflowerblue !important;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -129,5 +172,6 @@ header>div {
 .container-box{
     width: 100%;
     height: 100vh;
-    margin: 10% 10%;
+    padding: 10% 10%;
+    /* background-color: rgba(4, 4, 105, 0.8); */
 }

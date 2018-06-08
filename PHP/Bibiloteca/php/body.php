@@ -5,7 +5,7 @@ if (($_SESSION['usuario']['tipo'] != 'none')&& isset($_POST['seccio'])){
     foreach ($botones as $boton) {
         switch ($_POST['seccio']) {
             case $boton:
-                echo "<div class=\"jumbotron text-uppercase\" style=\"background-color:#ccc!important;\">";
+                echo "<div class=\"jumbotron text-uppercase\">";
                 echo "<h1 class=\"display-4 text-center\">".$boton."</h1>";
                 echo "</div>";
                 // Pintamos el contenido de las secciones

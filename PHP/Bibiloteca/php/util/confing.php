@@ -14,3 +14,4 @@ $con= new mysqli($cfg['host'],$cfg['user'], $cfg['pass'], $cfg['bd']);
 if ($con->connect_errno) {
     echo "Fallo al conectar a MySQL: ".$con->connect_error;
 }?>
+

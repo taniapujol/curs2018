@@ -12,16 +12,17 @@
             switch ($_SESSION['usuario']['tipo']) {
                 // El user tipo admin tiene los botones todos activados
                 case 'admin': ?>
-                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="ver">VER</button>
-                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="eliminar"><i class="material-icons">delete_outline</i></button>
-                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="editar"><i class="material-icons">create</i></button>
+                    <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="ver"><i class="material-icons">info</i></button>
+                    <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="eliminar"><i class="material-icons">delete_outline</i></button>
+                    <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="editar"><i class="material-icons">create</i></button>
                 <?php break;
                 case 'usuario': ?>
                     <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="ver">VER</button>
                 <?php break; 
             }?>
-            <h6 class="text-center">Ejemplares disponibles
-                <span class="badge badge-secondary text-right"><?=$row['copia']?></span>
+            
+            <h6 class="text-center disponibles">Ejemplares disponibles
+                <span class="badge badge-light text-right"><?=$row['disponibles']?></span>
             </h6>
         </div>
     </div>

@@ -50,7 +50,7 @@ if(isset($_GET['view'])){
                         LIMIT  $num_items";
                 $res= $con->query($sql);?>
                 <table class="table table-hover">
-                    <thead class="thead-dark">
+                    <thead class="thead">
                         <tr>
                             <th scope="col">Socio</th>
                             <th scope="col">Obra</th>
@@ -72,7 +72,7 @@ if(isset($_GET['view'])){
                             <td>
                                 <?php 
                                 if ($row['fecha_devuelto']==null || $row['fecha_devuelto']==' ') {?>
-                                    <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['prestamo']?>" data-seccion="devolver">DEVOLVER</button>  
+                                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['prestamo']?>" data-seccion="devolver">DEVOLVER</button>  
                                 <?php } ?>
                                 </td>
                         <?php } ?>

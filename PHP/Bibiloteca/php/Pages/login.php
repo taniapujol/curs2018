@@ -1,6 +1,6 @@
 <div class="container shadow-lg p-3 mb-5 bg-white rounded">
     <form class="form-signin" method="post">
-        <h3>Login</h3>
+        <h3 class="text-center">Login</h3>
         <br>
         <label for="inputEmail" class="sr-only">Dni</label>
         <input type="text" id="inputEmail" name="dni" class="form-control" placeholder="DNI" required="" autofocus="">
@@ -11,6 +11,6 @@
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
-        <button class="btn btn-lg btn-warning btn-block" type="submit" name="SignIn">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="SignIn">Sign in</button>
     </form>
 </div>
