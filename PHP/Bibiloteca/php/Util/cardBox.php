@@ -12,11 +12,11 @@
             switch ($_SESSION['usuario']['tipo']) {
                 // El user tipo admin tiene los botones todos activados
                 case 'admin': ?>
-                <div class="content-buttons"
+                <div class="content-buttons">
                     <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="ver"><i class="material-icons">info</i></button>
                     <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="eliminar"><i class="material-icons">delete_outline</i></button>
                     <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="editar"><i class="material-icons">create</i></button>
-                    <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="editar"><i class="material-icons">file_copy</i></button>
+                    <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['id']?>" data-seccion="copia"><i class="material-icons">file_copy</i></button>
                 </div>  
                 <?php break;
                 case 'usuario': ?>

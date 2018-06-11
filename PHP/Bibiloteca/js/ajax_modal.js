@@ -1,37 +1,3 @@
-function Devolver() {
-    var id = $('#id_prestamos').val();
-    var devolucion = $('#devolucion').val();
-    console.log(id+' - '+devolucion);
-    var formData = {'id':id,'devolucion':devolucion};
-    console.log(formData);
-    $.ajax({
-        type: "post",
-        url: "php/servicios/devolucion.php",
-        data: formData,
-       /* processData: false,  // tell jQuery not to process the data
-        contentType: false,  // tell jQuery not to set contentType*/
-        beforeSend: function () {
-            $('.submitBtn').attr("disabled","disabled");
-            $('.modal-body').css('opacity', '.5');
-        },
-        success:function(msg){
-            alert(msg);
-            if(msg == 'ok')
-            {window.location.reload();
-            $("#myModal").modal('hide');
-            
-            }else{
-                alert(msg);
-            }
-            $('.submitBtn').removeAttr("disabled");
-            $('.modal-body').css('opacity', '');
-        }
-    // fin ajax
-    });
-}
-function Eliminar() {
-    
-}
 $(document).ready(function () {   
     $('#Modal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) 
@@ -40,21 +6,29 @@ $(document).ready(function () {
         console.log(content+' <-data.id')
         console.log(sec+' <-data-seccion')
         var modal = $(this)
-        modal.find('.modal-title').text(sec +' ficha tecnica ')
-        $.get('php/Util/modal_body.php',{section:sec,id:content},function(data){
+        modal.find('.modal-title').text(sec)
+        $.get('php/Util/modal/modal_body.php',{section:sec,id:content},function(data){
             modal.find('.modal-body').html(data)
         }); 
-        if (sec=='editar') {
-            modal.find('.modal-footer').html('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="submit" class="btn btn-secondary">Modificar</button>')
-        }
-        if (sec=='devolver') {
-            modal.find('.modal-footer').html('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="button" class="btn btn-primary submitBTN" id="devolver" onclick="Devolver()">Devolver</button>')
-        }
-        if (sec=='ver') {
-            modal.find('.modal-footer').html('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>')
-        }
-        if (sec=='eliminar') {
-            modal.find('.modal-footer').html('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="button" class="btn btn-primary submitBTN" id="devolver" onclick="Eliminar()">Eliminar</button>')
+        switch (sec) {
+            case 'editar':
+                modal.find('.modal-footer').html('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="submit" class="btn btn-secondary">Modificar</button>')
+                break;
+            // caso en que llamamos la funcion devorver() que nos permite hacer un update de prestamos
+            case 'devolver':
+                modal.find('.modal-footer').html('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="button" class="btn btn-primary submitBTN" id="devolver" onclick="Devolver()">Devolver</button>')
+                break;
+            // caso en que se muestra una vista extra de la obra
+            case 'ver':
+                modal.find('.modal-footer').html('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>')
+                break;
+            // caso en que llamamos la funcion eliminar() que nos elimina una obra
+            case 'eliminar':
+                modal.find('.modal-footer').html('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="button" class="btn btn-primary submitBTN" id="eliminar" onclick="Eliminar()">Eliminar</button>')
+                break;
+            // caso en que llamamos la funcion alerta() que nos envia un coreo al socio alertanato de que la fecha top de devolucion a vencido
+            case 'alerta':
+                modal.find('.modal-footer').html('<button type="button" class="btn btn-primary submitBTN" id="Notificar" onclick="alerta()">Notificar</button>')
         }
     // fin del modal show
     });

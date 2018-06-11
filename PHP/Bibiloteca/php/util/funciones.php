@@ -135,5 +135,12 @@ function printContent ($directorio)
     }
     $con->close();
 }
+// la funcion fechaTop(fechaInicio) no sumara 15 dias mas a la fecha que le pasamos
+function fechaTop($fechaInicio)
+{
+    $fecha = $fechaInicio;
+    $fecha->add(new DateInterval('P15D'));
+    // echo $fecha->format('Y-m-d') . "\n";
+}
 // fin funciones
 ?>

@@ -1,6 +1,6 @@
 $.ajax({
     type: "post",
-    url: "php/Consutas/consulta-obra.php",
+    url: "php/servicios/newUser.php",
     data: "data",
     dataType: "JSON",
     success: function (response) {

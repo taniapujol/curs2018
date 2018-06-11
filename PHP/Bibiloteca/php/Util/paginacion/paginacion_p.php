@@ -28,15 +28,17 @@ if(isset($_GET['view'])){
     for ($i=0; $i<$total_pag; $i++){ 
         switch ($_GET['view']) {
             case $i:
-                include('confing.php');
+                include('php/Util/confing.php');
                 $sql="SELECT 
                             CONCAT(s.nombre, ' ', s.apellidos) AS socio,
                             o.caratula AS obra,
                             p.fecha_inicio,
                             p.fecha_top,
+                            if(p.fecha_top<CURDATE(),true,false)as alerta,
                             p.fecha_devuelto,
                             o.categoria as categoria,
-                            p.id as prestamo
+                            p.id as prestamo,
+                            p.notificado
                         FROM
                             prestamo p
                             inner join
@@ -58,6 +60,7 @@ if(isset($_GET['view'])){
                             <th scope="col">Fecha Top</th>
                             <th scope="col">Devuelto</th>
                             <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -74,7 +77,13 @@ if(isset($_GET['view'])){
                                 if ($row['fecha_devuelto']==null || $row['fecha_devuelto']==' ') {?>
                                     <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['prestamo']?>" data-seccion="devolver">DEVOLVER</button>  
                                 <?php } ?>
-                                </td>
+                            </td>
+                            <td>
+                            <?php 
+                                if ($row['alerta']==1 && $row['notificado']==0 && $row['fecha_devuelto']==null) {?>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['prestamo']?>" data-seccion="alerta"><i class="material-icons">notification_important</i></button>  
+                                <?php } else echo 'no entra'; ?>    
+                            </td>
                         <?php } ?>
                         </tr>
                     </tbody>

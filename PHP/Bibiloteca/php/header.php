@@ -17,13 +17,13 @@
         </div>
         <div class="col-4 d-flex justify-content-end align-items-center">
            <nav class="nav navbar-dark bg-black">
-            <?php include('php/Util/navbar.php');?>
+            <?php include('php/Util/navbars/navbar.php');?>
            </nav>
         </div>
     </div>
     <?php if ($_SESSION['usuario']['tipo'] != 'none') {?>
         <div>
-            <?php include('php/Util/nav_buttom.php'); ?>
+            <?php include('php/Util/navbars/nav_buttom.php'); ?>
         </div>
     <?php } ?>
    
