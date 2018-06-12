@@ -82,7 +82,7 @@ if(isset($_GET['view'])){
                             <?php 
                                 if ($row['alerta']==1 && $row['notificado']==0 && $row['fecha_devuelto']==null) {?>
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Modal" data-envio="<?=$row['prestamo']?>" data-seccion="alerta"><i class="material-icons">notification_important</i></button>  
-                                <?php } else echo 'no entra'; ?>    
+                                <?php } ?>    
                             </td>
                         <?php } ?>
                         </tr>

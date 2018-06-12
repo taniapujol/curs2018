@@ -29,6 +29,11 @@ $(document).ready(function () {
             // caso en que llamamos la funcion alerta() que nos envia un coreo al socio alertanato de que la fecha top de devolucion a vencido
             case 'alerta':
                 modal.find('.modal-footer').html('<button type="button" class="btn btn-primary submitBTN" id="Notificar" onclick="alerta()">Notificar</button>')
+                break;
+            // casp em que mostramos todas las copia existentes de la obra selecionada
+            case 'copia':
+                modal.find('.modal-footer').html('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>')
+                break;
         }
     // fin del modal show
     });

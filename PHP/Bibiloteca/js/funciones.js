@@ -1,3 +1,8 @@
+// ____________________________________________________________________________________________
+// 
+//                          FUNCIONES DE JQUERY  
+// 
+// ____________________________________________________________________________________________
 // funcion devolver, para asignar una fecha al campo de fecha_devuelto de nuestra bb.dd
 function Devolver() {
     var id = $('#id_prestamos').val();
@@ -34,7 +39,21 @@ function Devolver() {
 function Eliminar() {
     
 }
-// funcion enviarEmail, envia un email al socia imformado que su fecha_top a vencido
-function enviarEmail() {
-    
+
+// funcion alerta, nos recoge todos los valores necesarios para enviar el email 
+function alerta() {
+    var jsonData = JSON.stringify($("#alerta").serializeArray());
+    console.log(jsonData);
+    $.ajax({
+        type: "post",
+        url: "php/servicios/enviarEmail.php",
+        data: jsonData,
+        dataType: "json",
+        success: function (response) {
+            console.log(result);
+        },
+        error: function(result){
+            alert("errorrrrrr!!!");
+        }
+    });
 }
