@@ -12,7 +12,7 @@
   </thead>
   <tbody>
     <tr>
-      <td><?=$datos['id_prestamo']?></td>
+      <td><?=$datos['id_prestamos']?></td>
       <td><?=$datos['obra']?></td>
       <td><?=$datos['cat']?></td>
     </tr>

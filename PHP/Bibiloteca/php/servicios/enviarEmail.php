@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
 	$request= file_get_contents('php://input');
 	//Para convertir un Json en un array de php
     $datos = json_decode($request,true);
-    echo $datos[4]->email;
+    print_r($datos);
     
     //Import PHPMailer classes into the global namespace
     require '../Util/PHPMailer/src/Exception.php';
@@ -22,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = 'ainatpujolrigual@example.com';     // SMTP username
-        $mail->Password = '46963684';                         // SMTP password
+        $mail->Username = "ainatpujolrigual@gmail.com";     // SMTP username
+        $mail->Password = "46963684";                         // SMTP password
         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587;                                    // TCP port to connect to
 
@@ -35,9 +35,16 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
         //Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Notificacion fin de Prestamo';
-        $mail->Body    = include('php/Util/PHPMailer/body_notificacion.php');
+        $mail->Body    = include('../Util/PHPMailer/body_notificacion.php');
 
-    if ($mail->send()) {
+        $mail->send();
+        $msg = true;
+        // echo 'Message has been sent';
+    } catch(Exception $e) {
+        $msg = false;
+        // echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+    }
+    if ($msg) {
         echo json_encode([
             "error"		=> 0,
             "resultado" => "Message se ha enviado correctamente"
@@ -47,10 +54,8 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
             "error"		=> 1,
             "resultado" => 'Message no se ha enviado. Mailer Error: '.$mail->ErrorInfo
             ]);	
-        }
-    } catch(Exception $e) {
-        echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
     }
+   
 } else {
     echo json_encode([
         "error"		=> 1,

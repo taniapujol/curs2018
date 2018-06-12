@@ -1,7 +1,7 @@
 <?php 
 $num_items=10; //numero de items a mostrar
 // consulta inicial donde sacamos el total de items de la tabla
-include('confing.php');
+include('php/Util/confing.php');
 $sql="Select count(".$id_tabla.") as indice from ".$tabla;
 $result= $con->query($sql);
 $filas_num= $result->num_rows;
@@ -28,7 +28,7 @@ if(isset($_GET['view'])){
     for ($i=0; $i<$total_pag; $i++){ 
         switch ($_GET['view']) {
             case $i:
-                include('confing.php');
+                include('php/Util/confing.php');
                 $sql="Select * from $tabla where ".$id_tabla." >".$inicio." limit ".$num_items;
                 $res= $con->query($sql);
                 $nfilas= $res->num_rows;

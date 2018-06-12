@@ -42,17 +42,28 @@ function Eliminar() {
 
 // funcion alerta, nos recoge todos los valores necesarios para enviar el email 
 function alerta() {
-    var jsonData = JSON.stringify($("#alerta").serializeArray());
+    var Data = {
+        'id_prestamos'  : $('#id_prestamos').val(),
+        'obra'          : $('#obra').val(),
+        'cat'           : $('#cat').val(),
+        'user'          : $('#user').val(),
+        'email'         : $('#email').val()
+    }
+    var jsonData = JSON.stringify(Data)
     console.log(jsonData);
     $.ajax({
         type: "post",
         url: "php/servicios/enviarEmail.php",
         data: jsonData,
         dataType: "json",
-        success: function (response) {
-            console.log(result);
+        success: function (result) {
+            console.log(result.error);
+            if (result.error == 0) {
+                $("#myModal").modal('hide');  
+            }
         },
         error: function(result){
+            console.log(result.error);
             alert("errorrrrrr!!!");
         }
     });

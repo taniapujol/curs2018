@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $bd = "biblioteca";
-$pass = "tania1979";
+$pass = "";
 // array asociativa para la conneccion
 $cfg = array(
     "host" => $host,
