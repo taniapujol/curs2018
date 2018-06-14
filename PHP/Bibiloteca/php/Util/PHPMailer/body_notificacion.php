@@ -1,13 +1,10 @@
-<?php 
-// cuerpo del email de notificacion
-?>
 <h3>Le imformamos que ha vencido la fecha de disposición del prestamo:</h3>
-<table class="table">
-  <thead class="thead-dark">
+<table style="border:2px solid black;">
+  <thead style="backgroung-color:black;">
     <tr>
-      <th scope="col">Codigo de Prestamos</th>
-      <th scope="col">Obra</th>
-      <th scope="col">Categoria</th>
+      <th><strong>Codigo de Prestamos</strong></th>
+      <th><strong>Obra</strong></th>
+      <th><strong>Categoria</strong></th>
     </tr>
   </thead>
   <tbody>

@@ -7,9 +7,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
 	//Para almacenar los datos JSON recibidos en una variable
 	$request= file_get_contents('php://input');
 	//Para convertir un Json en un array de php
-    $datos = json_decode($request,true);
-    print_r($datos);
-    
+    $datos = json_decode($request,true);    
     //Import PHPMailer classes into the global namespace
     require '../Util/PHPMailer/src/Exception.php';
     require '../Util/PHPMailer/src/PHPMailer.php';
@@ -35,7 +33,9 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
         //Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Notificacion fin de Prestamo';
-        $mail->Body    = include('../Util/PHPMailer/body_notificacion.php');
+        $mail->Body    = '<h3>Le imformamos que ha vencido la fecha de disposición del prestamo:</h3><table style="border:2px solid black;"><thead style="background-color: #05054C;color:#fff"><tr><th><strong>Codigo de Prestamos</strong></th>
+        <th><strong>Obra</strong></th><th><strong>Categoria</strong></th></tr></thead><tbody>
+        <tr><td>'.$datos['id_prestamos'].'</td><td>'.$datos['obra'].'</td><td>'.$datos['cat'].'</td></tr></tbody></table>';
 
         $mail->send();
         $msg = true;
@@ -44,22 +44,16 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
         $msg = false;
         // echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
     }
-    if ($msg) {
+    if ($msg==true) {
         echo json_encode([
-            "error"		=> 0,
-            "resultado" => "Message se ha enviado correctamente"
-            ]);	
+            'error' => 0 , 
+            'result'=> "mesage enviado correctamente" 
+        ]);
     } else {
-            echo json_encode([
-            "error"		=> 1,
-            "resultado" => 'Message no se ha enviado. Mailer Error: '.$mail->ErrorInfo
-            ]);	
-    }
-   
-} else {
-    echo json_encode([
-        "error"		=> 1,
-        "valores"	=> "No hay ningun ajax con post"
+       echo json_encode([
+            'error' => 1 , 
+            'result'=> "mesage no se pudo enviar. Mailer Error :". $mail->ErrorInfo 
         ]);
     }
+}
 ?>

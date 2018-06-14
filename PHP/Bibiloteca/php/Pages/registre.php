@@ -1,21 +1,5 @@
-<?php 
-    if (isset($_POST['registre'])) {
-        $newUser = array(
-            'nombre'    => $_POST['nombre'] ,
-            'apellidos' => $_POST['apellidos'],
-            'direccion' => $_POST['direccion'],
-            'dni'       => $_POST['dni'],
-            'email'     => $_POST['email'],
-            'password'  => md5($_POST['pass']));
-        $newUser= newUser($newUser);
-        if($newUser){
-            $echo='Nuevo usuario registrado';
-            
-        }
-    }
-?>
 <div class="container">
-    <form class="form-signin" method="post">
+    <form class="form-registre"  id="form-registre" method="post">
         <h1>New Membrers</h1>
         <br>
         <br>
@@ -26,12 +10,13 @@
         <label for="inputDireccion" class="sr-only">Direccion</label>
         <input type="text" id="inputDireccion" name="direccion" class="form-control" placeholder="direccion" required="" autofocus="">
         <label for="inputDni" class="sr-only">DNI</label>
-        <input type="text" id="inputDni" name="dni" class="form-control" placeholder="DNI" required="" autofocus="">
+        <input type="text" id="inputDni" name="DNI" class="form-control" placeholder="DNI" required="" autofocus="">
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required="" autofocus="">
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" name="pass" class="form-control" placeholder="Password" required="">
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="">
         <br>
-        <button class="btn btn-lg btn-warning btn-block" type="submit" name="registre">Registre</button>
+        <button class="btn btn-lg btn-block" type="submit" name="registre" style="background-color: #05054C;color:#fff">Registre</button>
     </form>
+        <div id="status"></div>
 </div>

@@ -164,10 +164,6 @@ switch ($_REQUEST['section']) {
                             <input type="text" class="form-control" id="email" name="email" value="<?=$row['email']?>" readonly>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Mensaje a enviar</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" >Se enviara un mensaje predefinido</textarea>
-                </div>
             </form>                
         <?php break;
 } //fin del switch

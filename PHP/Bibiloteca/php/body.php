@@ -20,8 +20,9 @@ if (($_SESSION['usuario']['tipo'] != 'none')&& isset($_POST['seccio'])){
             break;
         case 'SingOut':
             unset($_SESSION['usuario']['nombre']);
+            unset($_SESSION['usuario']['tipo']);
             session_destroy();
-            $_POST['seccio']='home';
+            $_POST['seccio']='SingIn';
             header("Location: index.php");
             break;
         case 'prestamos':

@@ -42,6 +42,7 @@ function Eliminar() {
 
 // funcion alerta, nos recoge todos los valores necesarios para enviar el email 
 function alerta() {
+    console.log('funcion alerta activada enviado email');
     var Data = {
         'id_prestamos'  : $('#id_prestamos').val(),
         'obra'          : $('#obra').val(),
@@ -53,18 +54,20 @@ function alerta() {
     console.log(jsonData);
     $.ajax({
         type: "post",
+        async: true,
         url: "php/servicios/enviarEmail.php",
         data: jsonData,
         dataType: "json",
+        cache: true,
+        global: false,
         success: function (result) {
-            console.log(result.error);
-            if (result.error == 0) {
-                $("#myModal").modal('hide');  
-            }
+            console.log(result);
+            if(result['error']==0){alert('mesage enviado');}
+            
         },
-        error: function(result){
-            console.log(result.error);
-            alert("errorrrrrr!!!");
+        error: function (result) {
+            alert('error');
         }
+        
     });
 }
