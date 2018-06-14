@@ -16,7 +16,7 @@
     <!-- link a css propios -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Carga de funciones php -->
-    <?php include('php/util/funciones.php');?>
+    <?php include('php/Util/funciones.php');?>
     <!-- Link de alertify.js -->
         <!-- JavaScript -->
         <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.1/build/alertify.min.js"></script>
